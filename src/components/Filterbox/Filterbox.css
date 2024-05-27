@@ -1,0 +1,101 @@
+.filterbox {
+    flex-wrap: wrap;
+    width: 450px;
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 0;
+}
+
+.filterbox .inputbox {
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.filterbox .inputbox label {
+    margin-bottom: 10px;
+}
+
+.price-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.price-inputs input {
+    outline: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    width: 150px;
+    padding: 5px 10px;
+    margin: 0;
+    height: 30px;
+}
+
+.slider-container {
+    padding: 10px;
+}
+
+
+
+.rc-slider {
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.rc-slider-mark-text {
+    font-size: 12px;
+    color: #999;
+}
+  
+.rc-slider-handle {
+    border: 2px solid #f80000 !important;
+    opacity: 1 !important;
+}
+
+.rc-slider-handle:hover {
+    border-color: #ff6a6a !important;
+}
+
+.rc-slider-handle:active{
+    border-color: #ff6a6a !important;
+    box-shadow: 0 0 5px #ff6a6a;
+}
+
+.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+    border-color: #ff6a6a !important;
+    box-shadow: 0 0 5px #ff6a6a !important;
+}
+  
+.rc-slider-track {
+    background-color: #ff0000 !important;
+}
+
+.rc-slider-dot-active {
+    border-color: #ff0000 !important;
+}
+
+@media screen and (max-width: 1020px) {
+    .filterbox {
+        flex-wrap: wrap;
+        width: 300px;
+        border: 1px solid rgb(233, 233, 233);
+        border-radius: 10px;
+        padding: 20px;
+        padding-top: 0;
+    }
+    .price-inputs input {
+        width: 110px;
+        padding: 5px 10px;
+        margin: 0;
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .filterbox {
+        width: 100%;
+    }
+}
+  

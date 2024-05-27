@@ -1,0 +1,88 @@
+.university-full-information-section {
+    padding-left: 50px;
+}
+
+.underline-red {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.underline-red::before{
+    content: '';
+    width: 30px;
+    height: 2px;
+    background-color: red;
+    position: absolute;
+    bottom: -5px;
+}
+
+.info-wrap-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 30px;
+}
+
+
+.file-upload-container {
+    margin-top: 20px;
+  }
+  
+  .file-upload-input {
+    display: none;
+  }
+  
+  .file-upload-label {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .file-upload-label:hover {
+    background-color: #0056b3;
+  }
+  
+  .file-upload-name {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .file-upload-name::before {
+    content: "Selected file: ";
+  }
+  
+  .file-upload-clear {
+    display: inline-block;
+    margin-left: 10px;
+    color: #dc3545;
+    cursor: pointer;
+  }
+  
+  .file-upload-clear:hover {
+    text-decoration: underline;
+  }
+
+  .important-text{
+    font-weight: 600;
+    color: red;
+  }
+
+@media screen and (max-width: 800px) {
+  .university-full-information-section {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .info-wrap-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+}
+  
+  

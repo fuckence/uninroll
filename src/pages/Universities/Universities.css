@@ -1,0 +1,141 @@
+.container-universities-filter {
+    padding: 150px 0;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.filter-uni-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap !important;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.price_tag {
+    margin: 0;
+}
+.university-list {
+    flex-wrap: wrap;
+    width: calc(100% - 500px);
+}
+
+.university-list h1 {
+    position: relative;
+}
+
+.university-list h1::before{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background-color: red;
+}
+
+.university-card {
+    margin-top: 20px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 10px;
+    display: flex;
+    height: 300px;
+}
+
+.university-card img {
+    border-radius: 10px 0 0 10px;
+    width: 300px;
+    height: 300px;
+}
+
+.university-card div {
+    padding: 20px;
+}
+
+.university-name {
+    text-decoration: none;
+    color: black;
+}
+
+.university-name:hover {
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+}
+
+@media screen and (max-width: 1400px) {
+    .container-universities-filter {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .university-list {
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .university-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 800px;
+    }
+    
+    .university-card img {
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+        height: 500px;
+    }
+    
+}
+
+@media screen and (max-width: 1050px) {
+    .container-universities-filter {
+        width: 100%;
+        margin: auto;
+    }
+
+    .university-list {
+        flex-wrap: wrap;
+        width: 600px;
+        display: flex;
+    }
+
+    .university-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 800px;
+    }
+    
+    .university-card img {
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .container-universities-filter {
+        width: 80%;
+        margin: auto;
+    }
+    .filter-uni-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .university-list {
+        margin-top: 20px;
+        width: 100%;
+    }
+    .university-card{
+        height: auto;
+        position: relative;
+    }
+    .university-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1; /* Ensures the image is square */
+        object-fit: cover;
+    }
+}

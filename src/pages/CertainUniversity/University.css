@@ -1,0 +1,122 @@
+.container-university-block {
+    padding-top: 200px;
+    width: 1400px;
+    margin: auto;
+}
+
+.university-top-section-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.first-half-desc {
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.first-half-desc h1{
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.first-half-desc h1::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background-color: red;
+}
+
+.second-half-desc {
+    padding: 30px;
+    width: 100%;
+    position: relative;
+}
+
+.university-image-rounded {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 20px 20px 20px;
+    object-fit: cover;
+    display: block;
+}
+
+.circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 15px solid red;
+    background-color: transparent;
+    border-radius: 50%;
+    top: -20px;
+    left: 140px;
+}
+
+.circle2 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 8px solid rgba(255, 0, 0, 0.5);
+    background-color: transparent;
+    border-radius: 50%;
+    top: 40px;
+    left: 100px;
+}
+
+.university-desc-section-container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 100px;
+}
+
+@media screen and (max-width: 1420px) {
+    .container-university-block {
+        padding-top: 200px;
+        width: 1200px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    .container-university-block {
+        padding-top: 200px;
+        width: 1000px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .container-university-block {
+        padding-top: 200px;
+        width:100%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .container-university-block {
+        padding-top: 100px;
+        width:90%;
+        margin: auto;
+    }
+    .university-top-section-container{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    .second-half-desc {
+        padding: 0;
+    }
+    .university-desc-section-container{
+        display: flex;
+        flex-direction: column;
+    }
+}

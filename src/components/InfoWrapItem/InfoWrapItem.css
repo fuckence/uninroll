@@ -1,0 +1,37 @@
+
+.info-wrap-item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+}
+
+.info-wrap-item .icon-background{
+    padding: 10px;
+    background-color: #ffc1c1;
+    border-radius: 50%;
+}
+
+.info-wrap-item .wrap-item-text {
+    padding-left: 10px;
+    width: 100%;
+}
+
+@media screen and (max-width: 1220px) {
+    .info-wrap-item{
+        padding: 10px;
+    }
+    .info-wrap-item .wrap-item-text {
+        font-size: 13px;
+    }
+}
+
+
+@media screen and (max-width: 850px){
+    .info-wrap-container{
+      gap: 10px;
+    }
+}
+

@@ -1,0 +1,230 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: white;
+}
+  
+.container-header {
+    display: block;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+  
+.header-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    height: 100px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-family: "Poppins", sans-serif;
+}
+  
+.header-wrap::before,
+.header-wrap::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: calc(50% - 600px);
+}
+  
+.header-wrap::before {
+    left: 0;
+}
+  
+.header-wrap::after {
+    right: 0;
+}
+  
+.header-half {
+    width: calc(50% - 300px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+  
+.container-header ul {
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+  
+.container-header ul li {
+    height: 100%;
+    padding:0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+  
+.container-header a {
+    height: 100%;
+    line-height: 100px;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(104, 104, 104);
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+  
+.container-header a:hover {
+    color: rgb(0, 0, 0);
+}
+  
+.container-header ul li:hover {
+    background-color: #d9d9d9;
+}
+  
+.header-middle {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-middle a.active {
+    color: #000;
+}
+.header-left img {
+    width: 150px;
+}
+  
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+  
+.nav-menu {
+    display: none !important;
+}
+
+.languages-container-header {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: -10px 0 10px 0 rgba(0, 0, 0, 0.1);
+    top: 100px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.languages-container-header a{
+    display: flex;
+    width: 100%;
+    padding: 10px 20px;
+    cursor: pointer;
+    line-height: normal;
+    transition: all 0.3s ease;
+}
+
+.languages-container-header a:hover{
+    background-color: #d9d9d9;
+}
+
+.languages-container-header a img {
+    width: 30px;
+    margin-right: 10px;
+}
+  
+  
+.container-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 350px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.8s ease-in-out;
+  }
+  
+.container-sidebar ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.container-sidebar ul li {
+    width: 100%;
+}
+  
+.container-sidebar a {
+    color: #000;
+    padding: 10px 20px;
+    display: inline-block;
+    width: 100%;
+    font-size: 25px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.container-sidebar ul li svg:hover {
+    fill: red;
+}
+
+.container-sidebar ul li a:hover{
+    color: white;
+    background-color: #ff0000;
+    cursor: pointer;
+}
+
+.container-sidebar li:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.languages-container {
+    background-color: #000000;
+    transition: color 0.3s;
+}
+
+.languages-container a {
+    cursor: pointer;
+    background-color: #d9d9d9;
+    color: rgb(0, 0, 0) !important;
+    transition: all 0.3s ease;  
+}
+
+.languages-container a:hover {
+    color: rgb(0, 0, 0) !important;
+    background-color: rgb(255, 255, 255);
+}
+
+
+@media screen and (max-width: 950px) {
+    .nav-menu {
+        display: flex !important;
+    }
+    .header-middle{
+        display: none;
+    }
+
+    .language-button {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container-sidebar {
+        width: 100%;
+    }
+}

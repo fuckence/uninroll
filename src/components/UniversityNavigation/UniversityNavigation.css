@@ -1,0 +1,57 @@
+.navigation-section {
+    border-radius: 15px;
+    background: transparent;
+    margin-bottom: 40px;
+    position: sticky;
+    border: 1px solid #ffc1c1;
+    top: 140px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    width: 300px;
+    top: 120px;
+}
+
+.navigation-section a {
+    text-decoration: none;
+    color: #151515;
+    padding: 12px 15px;
+    display: block;
+    border-bottom: 1px solid #ffc1c1;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navigation-section a:hover {
+    color: #ff0000;
+}
+
+.navigation-section a:first-child {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.navigation-section a:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom: none;
+}
+
+.navigation-section a.active {
+    color: red;
+    font-weight: 500;
+    background-color: #ffc1c1;
+}
+
+@media screen and (max-width: 1020px) {
+    .navigation-section {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .navigation-section {
+        width: 100%;
+    }
+}
