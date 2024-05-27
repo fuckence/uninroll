@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/uninroll/static/css/main.b7202508.css",
+    "main.js": "/uninroll/static/js/main.3c9cd8f4.js",
+    "static/media/earthspin.gif": "/uninroll/static/media/earthspin.3772d5151f96b3620060.gif",
+    "static/media/earth.gif": "/uninroll/static/media/earth.7b0e50464da1be08c77b.gif",
+    "static/media/earth-ezgif.com-crop.gif": "/uninroll/static/media/earth-ezgif.com-crop.5b6cf7da1174e83af1c0.gif",
+    "static/media/slider_background.webp": "/uninroll/static/media/slider_background.bedfa2537d26cb5705f4.webp",
+    "static/media/logo-nobg.png": "/uninroll/static/media/logo-nobg.97818f514d810352f261.png",
+    "static/media/logo-nobg2.png": "/uninroll/static/media/logo-nobg2.fdbfdc5cf3b9852ee673.png",
+    "static/media/logo-bg.png": "/uninroll/static/media/logo-bg.2d3ce78106671c6d5673.png",
+    "static/media/kazakhstan-flag-round-circle-icon.png": "/uninroll/static/media/kazakhstan-flag-round-circle-icon.2bad806a366c560b083a.png",
+    "index.html": "/uninroll/index.html",
+    "static/media/calendar_icon.svg": "/uninroll/static/media/calendar_icon.a60bfb2b433c431b2a76.svg",
+    "static/media/location_icon.svg": "/uninroll/static/media/location_icon.d43d0ca120bdf83652a4.svg",
+    "static/media/search.svg": "/uninroll/static/media/search.6c039fe9d8f89874a56d.svg",
+    "static/media/school_icon.svg": "/uninroll/static/media/school_icon.3e17dd0f224c2512d337.svg",
+    "static/media/close.svg": "/uninroll/static/media/close.fb4cabc3dd433946ff0b.svg",
+    "static/media/menu.svg": "/uninroll/static/media/menu.444d0e11927b4093fcb9.svg",
+    "main.b7202508.css.map": "/uninroll/static/css/main.b7202508.css.map",
+    "main.3c9cd8f4.js.map": "/uninroll/static/js/main.3c9cd8f4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7202508.css",
+    "static/js/main.3c9cd8f4.js"
+  ]
+}
