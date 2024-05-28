@@ -1,11 +1,18 @@
 import React,{ useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import './Header.css'
+import {  Link as ScrollLink, animateScroll as scroll  } from 'react-scroll';
 
 export default function Header() {
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
     const [isLanguageContainerVisible, setIsLanguageContainerVisible] = useState(false);
-
+    const [activeLink, setActiveLink] = useState(null);
+    const handleSetActive = (to) => {
+        setActiveLink(to);
+      };
+    const handleLinkClick = (to) => {
+        setActiveLink(to); // Установите активный класс при нажатии на ссылку
+      };
     const hideSidebar = () => {
       setIsSidebarVisible(false);
     };
@@ -28,13 +35,25 @@ export default function Header() {
                 <div className="header-middle">
                     <ul>
                         <li>
-                            <NavLink to="/">Home</NavLink>
+                            <NavLink to="/uninroll">Home</NavLink>
                         </li>
                         <li>
                             <NavLink to="/universities">Universities</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/contact">Contact</NavLink>
+                            <ScrollLink 
+                            className='contact-nav-button'
+                                to='contact-footer'
+                                smooth={true}
+                                duration={300}
+                                offset={-120} 
+                                spy={true} 
+                                activeClass={activeLink === 'contact-footer' ? 'active' : null} 
+                                onSetActive={handleSetActive}
+                                onClick={() => handleLinkClick('contact-footer')}
+                            >
+                                Contact
+                            </ScrollLink>
                         </li>
                     </ul>
                 </div>
@@ -75,13 +94,13 @@ export default function Header() {
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
                 </li>
                 <li>
-                    <Link to="/">Home</Link>
+                    <NavLink to="/uninroll">Home</NavLink>
                 </li>
                 <li>
-                    <Link to="/universities">Universities</Link>
+                    <NavLink to="/universities">Universities</NavLink>
                 </li>
                 <li>
-                    <Link to="/contact">Contact</Link>
+                    <NavLink to="/contact">Contact</NavLink>
                 </li>
                 <li onClick={showLanguageContainer}>
                     <a>Language &#x25BE;</a>

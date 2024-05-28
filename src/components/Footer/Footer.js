@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function () {
   return (
-    <footer>
+    <footer id='contact-footer'>
         <div className="footer-container">
             <div className="footer-contact-part footer-wrap-part">
                 <h1>Contact</h1>

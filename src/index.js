@@ -11,7 +11,7 @@ import App from './App';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/uninroll",
     element: <App/>,
   },
   {
