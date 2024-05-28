@@ -41,10 +41,10 @@ export default function UniversityInformationSection({university}) {
                 </ul>
                 <div className="file-upload-container">
                     <p>Upload necessary files in <span className='important-text'>PDF</span> format</p>
-                    <FileUpload uploadName={'UNT certificate'}/>
-                    <FileUpload uploadName={'Photo size 3x4'}/> 
-                    <FileUpload uploadName={'The identify document'}/> 
-                    <FileUpload uploadName={'High school diploma'}/> 
+                    <FileUpload uploadName={'UNT certificate'} upload_id={'unt-cert'}/>
+                    <FileUpload uploadName={'Photo size 3x4'} upload_id={'photo-3x4'}/> 
+                    <FileUpload uploadName={'The identify document'} upload_id={'id-doc'}/> 
+                    <FileUpload uploadName={'High school diploma'} upload_id={'attestat'}/> 
                 </div>
             </div>
         </div>

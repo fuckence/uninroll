@@ -526,6 +526,16 @@ footer{
   .footer-container > .footer-wrap-part{
       width: 300px;
   }
+
+  .footer-container > .footer-apply-part{
+    width: 300px;
+  }
+  .input-button-section {
+    width: 300px;
+    gap: 0;
+  }
+
+  
   .container-university .university-heading {
       font-size: 35px;
   }

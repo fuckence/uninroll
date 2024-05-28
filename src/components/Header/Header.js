@@ -2,6 +2,7 @@ import React,{ useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import './Header.css'
 import { Link, animateScroll as scroll  } from 'react-scroll';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -87,7 +88,15 @@ export default function Header() {
                 )}
             </div>
         </div>
+        <AnimatePresence>
         {isSidebarVisible && (
+        <motion.div
+            className="container-sidebar"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+        >
         <div className="container-sidebar">
             <ul>
                 <li onClick={hideSidebar}>
@@ -100,7 +109,20 @@ export default function Header() {
                     <NavLink to="/universities">Universities</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/contact">Contact</NavLink>
+                    <Link 
+                            className='contact-nav-button'
+                                to='contact-footer'
+                                smooth={true}
+                                duration={300}
+                                offset={-120} 
+                                spy={true} 
+                                activeClass={activeLink === 'contact-footer' ? 'active' : null} 
+                                onSetActive={handleSetActive}
+                                onClick={() => handleLinkClick('contact-footer')}
+                            >
+                                Contact
+                            </Link>
+                    
                 </li>
                 <li onClick={showLanguageContainer}>
                     <a>Language &#x25BE;</a>
@@ -116,7 +138,9 @@ export default function Header() {
                 
             </ul>
         </div>
+        </motion.div>
         )}
+        </AnimatePresence>
     </header>
   )
 }

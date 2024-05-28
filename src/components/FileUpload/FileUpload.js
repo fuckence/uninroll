@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './FileUpload.css';
 
-export default function FileUpload({uploadName}) {
+export default function FileUpload({uploadName, upload_id}) {
   const [selectedFileName, setSelectedFileName] = useState('');
 
   const handleFileUpload = (event) => {
@@ -11,16 +11,16 @@ export default function FileUpload({uploadName}) {
 
   const handleClearFile = () => {
     setSelectedFileName('');
-    document.getElementById('file-upload').value = '';
+    document.getElementById(`${upload_id}`).value = '';
   };
 
   return (
     <div className="file-upload-container">
       <div className="file-upload-wrapper">
-        <label htmlFor="file-upload" className="file-upload-label">
+        <label htmlFor={upload_id} className="file-upload-label">
           {uploadName}
         </label>
-        <input type="file" id="file-upload" className="file-upload-input" onChange={handleFileUpload} />
+        <input type="file" id={upload_id} className="file-upload-input" onChange={handleFileUpload} />
         <div className="file-upload-name">{selectedFileName}</div>
         {selectedFileName && (
           <button className="file-upload-clear" onClick={handleClearFile}>
