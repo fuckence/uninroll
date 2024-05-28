@@ -521,21 +521,25 @@ footer{
       width: 300px;
   }
   .footer-container{
-      max-width: 300px;
+    width: 100%
   }
   .footer-container > .footer-wrap-part{
-      width: 300px;
+    width: 100%
   }
 
-  .footer-container > .footer-apply-part{
-    width: 300px;
+  .footer-container > .footer-wrap-part:nth-child(3){
+    width: 100%
   }
   .input-button-section {
-    width: 300px;
+    width: 100%;
     gap: 0;
   }
 
-  
+  .input-button-section button {
+    padding: 10px;
+    
+  }
+
   .container-university .university-heading {
       font-size: 35px;
   }
@@ -545,5 +549,12 @@ footer{
   
   .uninroll-definition {
       font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .input-button-section input{
+    width: 100%;
+    gap: 0;
   }
 }
