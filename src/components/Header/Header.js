@@ -1,7 +1,7 @@
 import React,{ useState } from 'react'
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.css'
-import { Link as ScrollLink, animateScroll as scroll  } from 'react-scroll';
+import { Link, animateScroll as scroll  } from 'react-scroll';
 
 export default function Header() {
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -41,7 +41,7 @@ export default function Header() {
                             <NavLink to="/universities">Universities</NavLink>
                         </li>
                         <li>
-                            <ScrollLink 
+                            <Link 
                             className='contact-nav-button'
                                 to='contact-footer'
                                 smooth={true}
@@ -53,7 +53,7 @@ export default function Header() {
                                 onClick={() => handleLinkClick('contact-footer')}
                             >
                                 Contact
-                            </ScrollLink>
+                            </Link>
                         </li>
                     </ul>
                 </div>
