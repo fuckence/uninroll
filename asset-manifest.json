@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/uninroll/static/css/main.1f90a6db.css",
-    "main.js": "/uninroll/static/js/main.71869ff2.js",
+    "main.js": "/uninroll/static/js/main.6bf5ee56.js",
     "static/media/earthspin.gif": "/uninroll/static/media/earthspin.3772d5151f96b3620060.gif",
     "static/media/earth.gif": "/uninroll/static/media/earth.7b0e50464da1be08c77b.gif",
     "static/media/earth-ezgif.com-crop.gif": "/uninroll/static/media/earth-ezgif.com-crop.5b6cf7da1174e83af1c0.gif",
@@ -18,10 +18,10 @@
     "static/media/close.svg": "/uninroll/static/media/close.fb4cabc3dd433946ff0b.svg",
     "static/media/menu.svg": "/uninroll/static/media/menu.444d0e11927b4093fcb9.svg",
     "main.1f90a6db.css.map": "/uninroll/static/css/main.1f90a6db.css.map",
-    "main.71869ff2.js.map": "/uninroll/static/js/main.71869ff2.js.map"
+    "main.6bf5ee56.js.map": "/uninroll/static/js/main.6bf5ee56.js.map"
   },
   "entrypoints": [
     "static/css/main.1f90a6db.css",
-    "static/js/main.71869ff2.js"
+    "static/js/main.6bf5ee56.js"
   ]
 }
