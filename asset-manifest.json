@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/uninroll/static/css/main.58af9682.css",
+    "main.css": "/uninroll/static/css/main.78b25654.css",
     "main.js": "/uninroll/static/js/main.f2de07d8.js",
     "static/media/earthspin.gif": "/uninroll/static/media/earthspin.3772d5151f96b3620060.gif",
     "static/media/earth.gif": "/uninroll/static/media/earth.7b0e50464da1be08c77b.gif",
@@ -17,11 +17,11 @@
     "static/media/school_icon.svg": "/uninroll/static/media/school_icon.3e17dd0f224c2512d337.svg",
     "static/media/close.svg": "/uninroll/static/media/close.fb4cabc3dd433946ff0b.svg",
     "static/media/menu.svg": "/uninroll/static/media/menu.444d0e11927b4093fcb9.svg",
-    "main.58af9682.css.map": "/uninroll/static/css/main.58af9682.css.map",
+    "main.78b25654.css.map": "/uninroll/static/css/main.78b25654.css.map",
     "main.f2de07d8.js.map": "/uninroll/static/js/main.f2de07d8.js.map"
   },
   "entrypoints": [
-    "static/css/main.58af9682.css",
+    "static/css/main.78b25654.css",
     "static/js/main.f2de07d8.js"
   ]
 }
