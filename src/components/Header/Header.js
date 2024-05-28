@@ -1,7 +1,7 @@
 import React,{ useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import './Header.css'
-import {  Link as ScrollLink, animateScroll as scroll  } from 'react-scroll';
+import { Link as ScrollLink, animateScroll as scroll  } from 'react-scroll';
 
 export default function Header() {
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
