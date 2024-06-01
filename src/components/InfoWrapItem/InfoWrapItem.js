@@ -6,7 +6,7 @@ export default function InfoWrapItem({uni_info, uni_info2, icon}) {
   return (
         <div className='info-wrap-item'>
             <div className='icon-background'>
-                <ReactSVG src={require(`../../resources/${icon}`)} />
+                <ReactSVG src={require(`../../../public/static/media/${icon}`)} />
             </div>
             <div className='wrap-item-text'>
                 <p>{uni_info}</p>
