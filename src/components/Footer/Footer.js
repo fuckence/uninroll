@@ -43,9 +43,9 @@ export default function () {
                 <p>Uni&#10076;n&#10076;roll © 2024 All Rights Reserved.</p>
             </div>
             <div className="footer-references">
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-whatsapp"></i></a>
-                <a href=""><i class="fab fa-telegram"></i></a>
+                <a href=""><i className="fab fa-instagram"></i></a>
+                <a href=""><i className="fab fa-whatsapp"></i></a>
+                <a href=""><i className="fab fa-telegram"></i></a>
             </div>
         </div>
         
