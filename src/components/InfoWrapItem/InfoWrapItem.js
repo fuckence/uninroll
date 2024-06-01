@@ -12,6 +12,11 @@ export default function InfoWrapItem({uni_info, uni_info2, icon}) {
         'school_icon.svg': schoolIcon
       };
 
+    console.log('Location Icon:', locationIcon);
+    console.log('Calendar Icon:', calendarIcon);
+    console.log('School Icon:', schoolIcon);
+
+
     return (
         <div className='info-wrap-item'>
             <div className='icon-background'>

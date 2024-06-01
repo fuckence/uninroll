@@ -12,7 +12,7 @@ export default function Header() {
         setActiveLink(to);
       };
     const handleLinkClick = (to) => {
-        setActiveLink(to); // Установите активный класс при нажатии на ссылку
+        setActiveLink(to);
       };
     const hideSidebar = () => {
       setIsSidebarVisible(false);
