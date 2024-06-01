@@ -233,8 +233,7 @@ footer{
   display: flex;
   flex-direction: row;
   justify-content: start;
-  width: 80%; /* Ensure the container takes full width */
-  max-width: 600px; /* Optional: Set a max width for the container */
+  width: 100%; /* Ensure the container takes full width */
   margin: 0; /* Center the container horizontally */
   gap: 10px; /* Add space between input and button */
   margin-bottom: 10px;
@@ -368,6 +367,9 @@ footer{
   }
   .footer-container > .footer-wrap-part:nth-child(3){
       width: 1000px;
+  }
+  .input-button-section {
+    width: 100%;
   }
   .footer-container-2 {
       max-width: 1000px;
@@ -521,7 +523,8 @@ footer{
       width: 300px;
   }
   .footer-container{
-    width: 100%
+    width: 90%;
+    margin: auto;
   }
   .footer-container > .footer-wrap-part{
     width: 100%

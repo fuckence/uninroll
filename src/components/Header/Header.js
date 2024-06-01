@@ -25,6 +25,9 @@ export default function Header() {
     const showLanguageContainer = () => {
         setIsLanguageContainerVisible(!isLanguageContainerVisible)
     }
+    const windowScrollUp = () => {
+        window.scrollTo(0, 0);
+    }
 
     return (
     <header>
@@ -36,10 +39,10 @@ export default function Header() {
                 <div className="header-middle">
                     <ul>
                         <li>
-                            <NavLink to="/uninroll">Home</NavLink>
+                            <NavLink to="/"  onClick={() => {windowScrollUp()}}>Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/universities">Universities</NavLink>
+                            <NavLink to="/universities" onClick={() => {windowScrollUp()}}>Universities</NavLink>
                         </li>
                         <li>
                             <Link 
@@ -88,25 +91,18 @@ export default function Header() {
                 )}
             </div>
         </div>
-        <AnimatePresence>
+        
         {isSidebarVisible && (
-        <motion.div
-            className="container-sidebar"
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        >
         <div className="container-sidebar">
             <ul>
                 <li onClick={hideSidebar}>
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
                 </li>
                 <li>
-                    <NavLink to="/uninroll">Home</NavLink>
+                    <NavLink to="/" onClick={() => {windowScrollUp()}}>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/universities">Universities</NavLink>
+                    <NavLink to="/universities" onClick={() => {windowScrollUp()}}>Universities</NavLink>
                 </li>
                 <li>
                     <Link 
@@ -138,9 +134,8 @@ export default function Header() {
                 
             </ul>
         </div>
-        </motion.div>
         )}
-        </AnimatePresence>
+        
     </header>
   )
 }
