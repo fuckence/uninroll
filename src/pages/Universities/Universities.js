@@ -6,7 +6,7 @@ import universities from '../../universitylist'
 import './Universities.css'
 import Footer from '../../components/Footer/Footer'
 
-function University() {
+function Universities() {
     const [filters, setFilters] = useState({
       location: '',
       major: '',
@@ -77,4 +77,4 @@ function University() {
     );
   }
 
-export default University
+export default Universities
