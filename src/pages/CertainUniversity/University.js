@@ -25,7 +25,7 @@ const University = () => {
                     <p>{university.description[0].en}</p>
                 </div>
                 <div className='second-half-desc'>
-                    <img className='university-image-rounded' src={university.image}></img>
+                    <img className='university-image-rounded' src={university.image} alt={'uni-image'}></img>
                     <div className="circle"></div>
                     <div className="circle2"></div>
                 </div>

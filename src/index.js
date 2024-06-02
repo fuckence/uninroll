@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import './index.css';
 import Universities from './pages/Universities/Universities'
-import University from './pages/CertainUniversity/University';
+import University from './pages/CertainUniversity/University'
 import App from './App';
 
 const router = createBrowserRouter([
