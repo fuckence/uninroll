@@ -1,11 +1,69 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './UniversityInformationSection.css'
 import InfoWrapItem from '../InfoWrapItem/InfoWrapItem'
 import TableFaculty from '../TableFaculty/TableFaculty'
 import FileUpload from '../FileUpload/FileUpload'
+import axiosInstance from "../../api/axios";
+
 
 export default function UniversityInformationSection({university}) {
-  return (
+    const [files, setFiles] = useState({
+        'unt-cert': null,
+        'photo-3x4': null,
+        'id-doc': null,
+        'attestat': null
+    });
+
+    const handleFileChange = (upload_id, file) => {
+        setFiles((prevFiles) => ({
+            ...prevFiles,
+            [upload_id]: file
+        }));
+        console.log(file);
+    };
+
+    const handeleEmailSend = async () => {
+        try{
+            const response = await axiosInstance.get('/email');
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const handleSaveFiles = async () => {
+        const formData = new FormData();
+        Object.keys(files).forEach((key) => {
+            if (files[key]) {
+                formData.append(key, files[key]);
+            }
+        });
+        try {
+            const response = await axiosInstance.post('/upload-multiple', formData);
+            console.log(response);
+            alert('Files uploaded successfully');
+        } catch (error) {
+            console.error('Error uploading files:', error);
+        }
+    };
+
+    const [connectionStatus, setConnectionStatus] = useState('');
+
+    useEffect(() => {
+        const checkConnection = async () => {
+            try {
+                const response = await axiosInstance.get('/test-connection');
+                setConnectionStatus(response.data);
+            } catch (error) {
+                console.error('Error connecting to backend:', error);
+                setConnectionStatus('Failed to connect to backend');
+            }
+        };
+
+        checkConnection();
+    }, []);
+
+    return (
     <div className='university-full-information-section'>
         <div className='overview-section'>
             <div id='overview-section'>
@@ -36,18 +94,25 @@ export default function UniversityInformationSection({university}) {
                 <p>Requirements for bachelor's and master's degrees:</p>
                 <ul>
                     {university.requirements[0].en.map((requirement, index) => (
-                    <li key={index}>{requirement}</li>
+                        <li key={index}>{requirement}</li>
                     ))}
                 </ul>
                 <div className="file-upload-container">
                     <p>Upload necessary files in <span className='important-text'>PDF</span> format</p>
-                    <FileUpload uploadName={'UNT certificate'} upload_id={'unt-cert'}/>
-                    <FileUpload uploadName={'Photo size 3x4'} upload_id={'photo-3x4'}/> 
-                    <FileUpload uploadName={'The identify document'} upload_id={'id-doc'}/> 
-                    <FileUpload uploadName={'High school diploma'} upload_id={'attestat'}/> 
+                    <FileUpload uploadName={'UNT certificate'} upload_id={'unt-cert'} name={'unt-cert'}
+                                onFileChange={handleFileChange}/>
+                    <FileUpload uploadName={'Photo size 3x4'} upload_id={'photo-3x4'} name={'photo-3x4'}
+                                onFileChange={handleFileChange}/>
+                    <FileUpload uploadName={'The identify document'} upload_id={'id-doc'} name={'id-doc'}
+                                onFileChange={handleFileChange}/>
+                    <FileUpload uploadName={'High school diploma'} upload_id={'attestat'} name={'attestat'}
+                                onFileChange={handleFileChange}/>
                 </div>
+                <button onClick={handleSaveFiles}>Save</button>
+                <p>{connectionStatus}</p>
+                <button onClick={handeleEmailSend}>Save</button>
             </div>
         </div>
     </div>
-  )
+    )
 }

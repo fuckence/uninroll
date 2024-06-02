@@ -36,7 +36,8 @@ export default function Header() {
         <div className="container-header">
             <div className="header-wrap">
                 <div className="header-half header-left">
-                    <img src={logo} alt={'logo'}></img>
+                    <img src={logo} alt={'logo'} />
+
                 </div>
                 <div className="header-middle">
                     <ul>
@@ -77,16 +78,19 @@ export default function Header() {
                 {isLanguageContainerVisible && (
                 <div className='languages-container-header'>
                     <a>
-                        <img src={require('./../../resources/russia-flag-round-circle-icon.png')}></img>
+                        <img src={require('./../../resources/russia-flag-round-circle-icon.png')} />
+
                         Russian
                     </a>
                     <a>
-                        <img src={require('./../../resources/kazakhstan-flag-round-circle-icon.png')}></img>
+                        <img src={require('./../../resources/kazakhstan-flag-round-circle-icon.png')} />
+
                         Kazakh
                     </a>
                     
                     <a>
-                        <img src={require('./../../resources/uk-flag-round-circle-icon.png')}></img>
+                        <img src={require('./../../resources/uk-flag-round-circle-icon.png')} />
+
                         English
                     </a>
                 </div>
