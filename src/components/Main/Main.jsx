@@ -13,7 +13,7 @@ export default function Main() {
                 </div>  
                 <div className="location-part">
                     <div className="image-location">
-                        <img src={require('./../../resources/earthspin.gif')}></img>
+                        <img src={`${process.env.PUBLIC_URL}/images/earthspin.gif`} alt="EarthSpin" />
                     </div>
                     <p className="location-part-text">Located in <br></br> Kazakhstan</p>
                 </div>

@@ -2,11 +2,10 @@ import React,{ useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import './Header.css'
 import { Link } from 'react-scroll';
-import logo from '../../resources/logo-nobg2.png';
+// import logo from '/images/logo-nobg2.png';
 
 export default function Header() {
 
-    const publicUrl = process.env.PUBLIC_URL
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
     const [isLanguageContainerVisible, setIsLanguageContainerVisible] = useState(false);
     const [activeLink, setActiveLink] = useState(null);
@@ -36,7 +35,7 @@ export default function Header() {
         <div className="container-header">
             <div className="header-wrap">
                 <div className="header-half header-left">
-                    <img src={logo} alt={'logo'} />
+                    <img src={`${process.env.PUBLIC_URL}/images/logo-nobg2.png`} alt={'logo'} />
 
                 </div>
                 <div className="header-middle">
@@ -78,18 +77,18 @@ export default function Header() {
                 {isLanguageContainerVisible && (
                 <div className='languages-container-header'>
                     <a>
-                        <img src={require('./../../resources/russia-flag-round-circle-icon.png')} />
+                        <img src={`${process.env.PUBLIC_URL}/images/russia-flag-round-circle-icon.png`} alt={'russian-lang'}/>
 
                         Russian
                     </a>
                     <a>
-                        <img src={require('./../../resources/kazakhstan-flag-round-circle-icon.png')} />
+                        <img src={`${process.env.PUBLIC_URL}/images/kazakhstan-flag-round-circle-icon.png`} alt={'kazakh-lang'} />
 
                         Kazakh
                     </a>
                     
                     <a>
-                        <img src={require('./../../resources/uk-flag-round-circle-icon.png')} />
+                        <img src={`${process.env.PUBLIC_URL}/images/uk-flag-round-circle-icon.png`} alt={'kazakh-lang'}  />
 
                         English
                     </a>

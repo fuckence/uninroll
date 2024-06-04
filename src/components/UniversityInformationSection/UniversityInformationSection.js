@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './UniversityInformationSection.css'
 import InfoWrapItem from '../InfoWrapItem/InfoWrapItem'
 import TableFaculty from '../TableFaculty/TableFaculty'
@@ -14,6 +14,7 @@ export default function UniversityInformationSection({university}) {
         'attestat': null
     });
 
+    const fullnameRef = useRef(null);
     const handleFileChange = (upload_id, file) => {
         setFiles((prevFiles) => ({
             ...prevFiles,
@@ -22,28 +23,26 @@ export default function UniversityInformationSection({university}) {
         console.log(file);
     };
 
-    const handeleEmailSend = async () => {
-        try{
-            const response = await axiosInstance.get('/email');
-            console.log(response);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
     const handleSaveFiles = async () => {
         const formData = new FormData();
+        console.log(fullnameRef.current.value);
+        formData.append('fullname', fullnameRef.current.value);
+
         Object.keys(files).forEach((key) => {
             if (files[key]) {
                 formData.append(key, files[key]);
             }
         });
+
+        for (let [key, value] of formData.entries()) {
+            console.log(key, value);
+        }
         try {
-            const response = await axiosInstance.post('/upload-multiple', formData);
+            const response = await axiosInstance.post('/api/upload', formData);
             console.log(response);
-            alert('Files uploaded successfully');
+            alert('Files are uploaded and sent successfully');
         } catch (error) {
-            console.error('Error uploading files:', error);
+            console.error('Error uploading files and fullname:', error);
         }
     };
 
@@ -99,6 +98,9 @@ export default function UniversityInformationSection({university}) {
                 </ul>
                 <div className="file-upload-container">
                     <p>Upload necessary files in <span className='important-text'>PDF</span> format</p>
+                    <label>Full name:</label> <br/>
+                    <input type="text" className="user-input" id="user_fullname" name='fullname'
+                           ref={fullnameRef} placeholder='Write your fullname...'/>
                     <FileUpload uploadName={'UNT certificate'} upload_id={'unt-cert'} name={'unt-cert'}
                                 onFileChange={handleFileChange}/>
                     <FileUpload uploadName={'Photo size 3x4'} upload_id={'photo-3x4'} name={'photo-3x4'}
@@ -108,9 +110,8 @@ export default function UniversityInformationSection({university}) {
                     <FileUpload uploadName={'High school diploma'} upload_id={'attestat'} name={'attestat'}
                                 onFileChange={handleFileChange}/>
                 </div>
-                <button onClick={handleSaveFiles}>Save</button>
+                <button className='save-button' onClick={handleSaveFiles} >Save</button>
                 <p>{connectionStatus}</p>
-                <button onClick={handeleEmailSend}>Save</button>
             </div>
         </div>
     </div>

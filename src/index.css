@@ -164,12 +164,14 @@ body {
   background-color: #181818;
   margin: auto;
   height: 100vh;
-  padding: 0 300px;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.container-definition .row {
+    width: 1400px;
+}
 .uninroll-definition {
   text-align:justify;
   font-size: 40px;

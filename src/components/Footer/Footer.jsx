@@ -37,7 +37,7 @@ export default function () {
         </div>
         <div className="footer-container-2">
             <div className="footer-left">
-                <img src={require('./../../resources/logo-nobg2.png')}></img>
+                <img src={`${process.env.PUBLIC_URL}/images/logo-nobg2.png`} />
             </div>
             <div>
                 <p>Uni&#10076;n&#10076;roll © 2024 All Rights Reserved.</p>

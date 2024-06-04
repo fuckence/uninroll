@@ -70,6 +70,38 @@
     color: red;
   }
 
+  .user-input {
+    display: inline-block;
+    padding: 10px 15px;
+    width: 220px;
+    background-color: transparent;
+    border: 1px solid #ffc1c1;
+    color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .user-input:focus {
+    border: 1px solid red;
+  }
+
+  .save-button {
+    margin-top: 10px;
+    display: inline-block;
+    width: 220px;
+    padding: 10px 50px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .save-button:hover {
+    background-color: red;
+  }
+
 @media screen and (max-width: 800px) {
   .university-full-information-section {
     padding-left: 0;
