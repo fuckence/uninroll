@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     path: "/universities/:universityName",
     element: <University />,
   },
-]);
+], { basename: process.env.PUBLIC_URL });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

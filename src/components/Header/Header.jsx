@@ -30,13 +30,14 @@ export default function Header() {
         window.scrollTo(0, 0);
     }
 
+    console.log(process.env.PUBLIC_URL);
+
     return (
     <header>
         <div className="container-header">
             <div className="header-wrap">
                 <div className="header-half header-left">
                     <img src={`${process.env.PUBLIC_URL}/images/logo-nobg2.png`} alt={'logo'} />
-
                 </div>
                 <div className="header-middle">
                     <ul>
