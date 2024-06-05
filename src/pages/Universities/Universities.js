@@ -39,6 +39,10 @@ function Universities() {
         
       );
     });
+
+    const windowScrollUp = () => {
+        window.scrollTo(0, 0);
+    }
     
   
     return (
@@ -58,7 +62,7 @@ function Universities() {
                   <img src={university.image} alt={university.name} />
                   <div>
                     <h4>
-                      <Link className='university-name' to={`/universities/${university.short_name}`}>
+                      <Link className='university-name' to={`/universities/${university.short_name}`}  onClick={() => {windowScrollUp()}}>
                         {university.name}
                       </Link>
                     </h4>

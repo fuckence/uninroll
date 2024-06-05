@@ -231,4 +231,7 @@ header {
     .container-sidebar {
         width: 100%;
     }
+    .header-wrap {
+         height: 80px;
+     }
 }

@@ -559,8 +559,11 @@ footer{
 }
 
 @media screen and (max-width: 430px) {
-  .input-button-section input{
-    width: 100%;
-    gap: 0;
-  }
+    .input-button-section input{
+        width: 100%;
+        gap: 0;
+    }
+    .container-category {
+        height: 120vh;
+    }
 }
