@@ -23,7 +23,7 @@ export const uploadFiles = createAsyncThunk(
     }
 );
 
-export const fetchFiles = createAsyncThunk('files/fetch', async () => {
+export const fetchFiles = createAsyncThunk('files/fetch', async (_, { rejectWithValue }) => {
     try {
         const response = await axios.get('/file/get-files');
         if (response.status !== 200) {
@@ -31,8 +31,6 @@ export const fetchFiles = createAsyncThunk('files/fetch', async () => {
         }
         return response.data.files;
     } catch (error) {
-        // This will correctly return a rejected promise with a payload of `error.message`
-        // which is what `rejectWithValue` typically does.
         return rejectWithValue(error.response?.data || { message: error.message });
     }
 });

@@ -88,7 +88,7 @@ export const DocumentsSection = () => {
             {uploadStatus === 'loading' && <div className='server-message-block'>Uploading...</div>}
             {uploadStatus === 'succeeded' && <div className='server-message-block'>Files uploaded successfully!</div>}
             {uploadStatus === 'failed' && <div className='server-message-block'>Error: {error}</div>}
-            <button onClick={handleFileUpload} disabled={status === 'loading'} className='upload-files-button'>Upload Files</button>
+            <button onClick={handleFileUpload} disabled={uploadStatus === 'loading'} className='upload-files-button'>Upload Files</button>
             
         </div>
     );
