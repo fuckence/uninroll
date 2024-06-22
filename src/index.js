@@ -1,33 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom'
 import './index.css';
-import Universities from './pages/Universities/Universities'
-import University from './pages/CertainUniversity/University'
 import App from './App';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/universities",
-    element: <Universities />,
-  },
-  {
-    path: "/universities/:universityName",
-    element: <University />,
-  },
-], { basename: process.env.PUBLIC_URL });
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <App />,
+//   },
+//   {
+//     path: "/universities",
+//     element: <Universities />,
+//   },
+//   {
+//     path: "/universities/:universityName",
+//     element: <University />,
+//   },
+//   {
+//     path: "/login",
+//     element: <LoginPage />,
+//   },
+//   {
+//     path: "/register",
+//     element: <RegisterPage />,
+//   },
+//   {
+//     path: "/profile",
+//     element: <LoginPage />,
+//   },
+
+// ], { basename: process.env.PUBLIC_URL });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
+       <BrowserRouter>
+              <Provider store={store}>
+                     <App />
+              </Provider>
+      </BrowserRouter>,
 );
 

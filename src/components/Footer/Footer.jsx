@@ -9,12 +9,12 @@ export default function () {
                 <ul>
                     <li>
                         <i className="fas fa-map-marker-alt"></i>
-                            178 West 27th Street, Suite 527<br></br>
-                            New York NY 10012
+                            Kabanbay Batyr avenue, 52<br></br>
+                            Astana NQZ, 010000
                     </li>
                     <li>
                         <i className="fas fa-phone-alt"></i>
-                        + 7 (700) 632 5234
+                        + 7 (701) 771 4774
                     </li>
                 </ul>
             </div>

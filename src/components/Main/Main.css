@@ -35,18 +35,24 @@
     font-size: 25px;
   }
   
-  .main-left button {
+  .main-left .link-to-uni {
     border: 1px solid rgb(255, 255, 255);
     background-color: transparent;
     color: rgb(255, 255, 255);
+    text-decoration: none;
     font-family: "Poppins", sans-serif;
     padding: 10px 30px;
     border-radius: 30px;
     transition: all 0.3s ease;
   }
   
-  .main-left button:hover {
+  .link-to-uni:hover {
     background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  }
+
+  .main-left button:hover {
+   
     color: rgb(0, 0, 0);
   }
   

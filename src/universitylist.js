@@ -9,6 +9,7 @@ const universities = [
         education_price_year: 1590000,
         credits_per_year: 60,
         education_price_credit: 26500,
+        email: 'yucanmor@gmail.com',
         image: 'https://kazguu.kz/wp-content/uploads/2015/11/IMG_1668-----kopiya-1024x683.jpg',
         description: 
         [{
@@ -75,6 +76,7 @@ const universities = [
         education_price_year: 1100000,
         credits_per_year: 60,
         education_price_credit: 19000,
+        email: 'yucanmor@gmail.com',
         image: 'https://kazpravda.kz/media/news/2023/03/23/9b26e61a-e3c4-4893-b313-0d7f42938278.jpg',
         description: 
         [{
@@ -141,6 +143,7 @@ const universities = [
         education_price_year: 1625000,
         credits_per_year: 60,
         education_price_credit: 27000,
+        email: 'yucanmor@gmail.com',
         image: 'https://static.tildacdn.com/tild6363-3263-4432-b131-656639336531/F1.png',
         description: 
         [{

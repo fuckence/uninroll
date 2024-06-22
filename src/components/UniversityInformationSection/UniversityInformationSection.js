@@ -2,65 +2,32 @@ import React, { useState, useEffect, useRef } from 'react'
 import './UniversityInformationSection.css'
 import InfoWrapItem from '../InfoWrapItem/InfoWrapItem'
 import TableFaculty from '../TableFaculty/TableFaculty'
-import FileUpload from '../FileUpload/FileUpload'
-import axiosInstance from "../../api/axios";
+import { useDispatch, useSelector } from 'react-redux'
+import { checkIsAuth } from '../../redux/features/auth/authSlice'
+import { sendApplicationEmail, resetEmailState } from '../../redux/features/email/emailSlice'
 
 
 export default function UniversityInformationSection({university}) {
-    const [files, setFiles] = useState({
-        'unt-cert': null,
-        'photo-3x4': null,
-        'id-doc': null,
-        'attestat': null
-    });
-
-    const fullnameRef = useRef(null);
-    const handleFileChange = (upload_id, file) => {
-        setFiles((prevFiles) => ({
-            ...prevFiles,
-            [upload_id]: file
-        }));
-        console.log(file);
-    };
-
-    const handleSaveFiles = async () => {
-        const formData = new FormData();
-        console.log(fullnameRef.current.value);
-        formData.append('fullname', fullnameRef.current.value);
-
-        Object.keys(files).forEach((key) => {
-            if (files[key]) {
-                formData.append(key, files[key]);
-            }
-        });
-
-        for (let [key, value] of formData.entries()) {
-            console.log(key, value);
-        }
-        try {
-            const response = await axiosInstance.post('/api/upload', formData);
-            console.log(response);
-            alert('Files are uploaded and sent successfully');
-        } catch (error) {
-            console.error('Error uploading files and fullname:', error);
-        }
-    };
-
-    const [connectionStatus, setConnectionStatus] = useState('');
+    const dispatch = useDispatch()
+    const isAuth = useSelector(checkIsAuth)
+    const user = useSelector(state => state.auth.user);
+    const emailStatus = useSelector(state => state.email.status);
+    const emailError = useSelector(state => state.email.error);
+    const emailMessage = useSelector(state => state.email.message);
 
     useEffect(() => {
-        const checkConnection = async () => {
-            try {
-                const response = await axiosInstance.get('/test-connection');
-                setConnectionStatus(response.data);
-            } catch (error) {
-                console.error('Error connecting to backend:', error);
-                setConnectionStatus('Failed to connect to backend');
-            }
+        return () => {
+            dispatch(resetEmailState());
         };
+    }, [dispatch]);
 
-        checkConnection();
-    }, []);
+    const handleSaveFiles = async () => {
+        try {
+            await dispatch(sendApplicationEmail({ userId: user._id, fullname: user.fullname, email: university.email }));
+        } catch (error) {
+            console.error('Error sending application:', error);
+        }
+    };
 
     return (
     <div className='university-full-information-section'>
@@ -96,7 +63,7 @@ export default function UniversityInformationSection({university}) {
                         <li key={index}>{requirement}</li>
                     ))}
                 </ul>
-                <div className="file-upload-container">
+                {/* <div className="file-upload-container">
                     <p>Upload necessary files in <span className='important-text'>PDF</span> format</p>
                     <label>Full name:</label> <br/>
                     <input type="text" className="user-input" id="user_fullname" name='fullname'
@@ -110,8 +77,18 @@ export default function UniversityInformationSection({university}) {
                     <FileUpload uploadName={'High school diploma'} upload_id={'attestat'} name={'attestat'}
                                 onFileChange={handleFileChange}/>
                 </div>
-                <button className='save-button' onClick={handleSaveFiles} >Save</button>
-                <p>{connectionStatus}</p>
+                <button className='save-button' onClick={handleSaveFiles} >Save</button> */}
+                {/* <p>{connectionStatus}</p> */}
+                <p>Upload the required files in <span className='important-text'>PDF</span> format to your profile page</p>
+                { isAuth ? (
+                    <button className='save-button' onClick={handleSaveFiles} >Apply</button>
+                ) : (
+                    <p className='important-text'>You must be logged in to apply</p>
+                )}
+                {emailStatus === 'loading' && <p>Sending application...</p>}
+                {emailStatus === 'succeeded' && <p>{emailMessage}</p>}
+                {emailStatus === 'failed' && <p>Error: {emailError}</p>}
+                
             </div>
         </div>
     </div>

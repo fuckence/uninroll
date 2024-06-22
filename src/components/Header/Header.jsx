@@ -1,13 +1,38 @@
-import React,{ useState } from 'react'
+import React,{ useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import './Header.css'
 import { Link } from 'react-scroll';
-// import logo from '/images/logo-nobg2.png';
+import { useDispatch, useSelector } from 'react-redux';
+import { checkIsAuth, logout, getMe } from '../../redux/features/auth/authSlice';
 
 export default function Header() {
+    const dispatch = useDispatch()
+    const isAuth = useSelector(checkIsAuth)
+    const [username, setUsername] = useState('')
+    const logoutHandler = () => {
+        dispatch(logout())
+        window.localStorage.removeItem('token')
+    }
+    const fullname = useSelector(state => state.auth.user?.fullname)
+
+    useEffect(()=>{
+        if(isAuth) {
+            dispatch(getMe());
+        }
+
+    },[isAuth, dispatch])
+
+    useEffect(()=>{
+        if(fullname) {
+            const fullnameSplited = fullname.split(' ')
+            const newusername = fullnameSplited[1]
+            setUsername(newusername)
+        }
+    }, [fullname])
 
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
     const [isLanguageContainerVisible, setIsLanguageContainerVisible] = useState(false);
+    const [isLanguageContainer2Visible, setIsLanguageContainer2Visible] = useState(false);
     const [activeLink, setActiveLink] = useState(null);
     const handleSetActive = (to) => {
         setActiveLink(to);
@@ -26,11 +51,12 @@ export default function Header() {
     const showLanguageContainer = () => {
         setIsLanguageContainerVisible(!isLanguageContainerVisible)
     }
+    const showLanguageContainer2 = () => {
+        setIsLanguageContainer2Visible(!isLanguageContainer2Visible)
+    }
     const windowScrollUp = () => {
         window.scrollTo(0, 0);
     }
-
-    console.log(process.env.PUBLIC_URL);
 
     return (
     <header>
@@ -50,6 +76,7 @@ export default function Header() {
                         <li>
                             <Link 
                             className='contact-nav-button'
+                            style={{userSelect: 'none'}}
                                 to='contact-footer'
                                 smooth={true}
                                 duration={300}
@@ -70,31 +97,56 @@ export default function Header() {
                         <li className='nav-menu' onClick={showSidebar}>
                             <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
                         </li>
-                        <li className='language-button'>
-                            <a onClick={showLanguageContainer} style={{cursor: 'pointer'}}>Language &#x25BE;</a>
-                        </li>
+                        <div className='language-section'>
+                            <li className='language-button'>
+                                <a onClick={showLanguageContainer} style={{cursor: 'pointer', userSelect: 'none'}}>Language &#x25BE;</a>
+                            </li>
+                            {isLanguageContainerVisible && (
+                                <div className='languages-container-header'>
+                                    <a>
+                                        <img src={`${process.env.PUBLIC_URL}/images/russia-flag-round-circle-icon.png`} alt={'russian-lang'}/>
+
+                                        Russian
+                                    </a>
+                                    <a>
+                                        <img src={`${process.env.PUBLIC_URL}/images/kazakhstan-flag-round-circle-icon.png`} alt={'kazakh-lang'} />
+
+                                        Kazakh
+                                    </a>
+                                    
+                                    <a>
+                                        <img src={`${process.env.PUBLIC_URL}/images/uk-flag-round-circle-icon.png`} alt={'kazakh-lang'}  />
+
+                                        English
+                                    </a>
+                                </div>
+                            )}
+                        </div>
+                        
+                        { isAuth ? (
+                            <div className='profile-section'>
+                                <li className='profile-button'>
+                                    <NavLink to="/profile" active style={{cursor: 'pointer', color: 'black'}} >
+                                        <img src={`${process.env.PUBLIC_URL}/images/profile_icon.svg`} style={{marginRight: '5px'}}/>
+                                        {username}
+                                    </NavLink>
+                                </li>
+                                <li className='profile-button'>
+                                    <NavLink to='/' onClick={logoutHandler} style={{cursor: 'pointer'}}><img src={`${process.env.PUBLIC_URL}/images/logout_icon.svg`} /></NavLink>
+                                    
+                                    
+                                </li>
+                            </div>
+                                
+                                ) : (
+                                    <li className='profile-button'><NavLink to="/login" style={{color: 'black'}} onClick={() => {windowScrollUp()}}>Login</NavLink></li>
+                                )
+                        }
+                        
                     </ul>
-                </div>
-                {isLanguageContainerVisible && (
-                <div className='languages-container-header'>
-                    <a>
-                        <img src={`${process.env.PUBLIC_URL}/images/russia-flag-round-circle-icon.png`} alt={'russian-lang'}/>
-
-                        Russian
-                    </a>
-                    <a>
-                        <img src={`${process.env.PUBLIC_URL}/images/kazakhstan-flag-round-circle-icon.png`} alt={'kazakh-lang'} />
-
-                        Kazakh
-                    </a>
                     
-                    <a>
-                        <img src={`${process.env.PUBLIC_URL}/images/uk-flag-round-circle-icon.png`} alt={'kazakh-lang'}  />
-
-                        English
-                    </a>
                 </div>
-                )}
+                
             </div>
         </div>
         
@@ -123,21 +175,31 @@ export default function Header() {
                                 onClick={() => handleLinkClick('contact-footer')}
                             >
                                 Contact
-                            </Link>
+                    </Link>
                     
                 </li>
-                <li onClick={showLanguageContainer}>
+                <li onClick={showLanguageContainer2}>
                     <a>Language &#x25BE;</a>
                 </li>
-                {isLanguageContainerVisible && (
+                {isLanguageContainer2Visible && (
                 <div className='languages-container'>
                     <a>Kazakh</a>
                     <a>Russian</a>
                     <a>English</a>
                 </div>
                 )}
-
-                
+                { isAuth ? 
+                (<li>
+                    <NavLink to="/profile" style={{cursor: 'pointer'}}>{username}</NavLink>
+                </li>) 
+                    : 
+                (<li>
+                    <NavLink to={'/login'} href='/' onClick={() => {windowScrollUp()}}>Login</NavLink>
+                </li>) }
+                { isAuth ? 
+                (<li>
+                    <Link onClick={logoutHandler} style={{cursor: 'pointer'}}>Logout</Link>
+                </li>) : (<li></li>) }                             
             </ul>
         </div>
         )}

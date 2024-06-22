@@ -6,7 +6,7 @@ export default function FileUpload({uploadName, upload_id, name, onFileChange}) 
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
-    onFileChange(upload_id, file);
+    onFileChange(event);
     setSelectedFileName(file ? file.name : '');
   };
 

@@ -35,6 +35,7 @@
   
   .file-upload-name::before {
     content: "Selected file: ";
+    margin: 0;
     font-size: 16px;
   }
   
@@ -54,4 +55,37 @@
     background-color: transparent;
     border: 1px solid black;
   }
+
+@media screen and (max-width: 900px) {
+  .file-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .file-upload-label {
+    display: inline-block;
+    padding: 10px 15px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #ffc1c1;
+    color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .file-upload-name {
+    margin-left: 0;
+    font-size: 14px;
+  }
+  .file-upload-clear {
+    border: none;
+    margin-left: 0;
+    padding: 5px 20px;
+    background-color: black;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+}
   

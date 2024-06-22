@@ -1,10 +1,14 @@
 import axios from 'axios';
 
-const axiosInstance = axios.create({
-    baseURL: 'https://uninroll-back.onrender.com/',
-    headers: {
-        'Content-Type': 'multipart/form-data',
-    },
+const instance = axios.create({
+    baseURL: 'http://localhost:5000/api',
+    validateStatus: () => true,
 });
 
-export default axiosInstance;
+instance.interceptors.request.use((config) => {
+    config.headers.Authorization = window.localStorage.getItem('token')
+
+    return config
+})
+
+export default instance;
