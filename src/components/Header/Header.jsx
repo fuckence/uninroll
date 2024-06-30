@@ -4,6 +4,7 @@ import './Header.css'
 import { Link } from 'react-scroll';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkIsAuth, logout, getMe } from '../../redux/features/auth/authSlice';
+import { useTranslation } from 'react-i18next'
 
 export default function Header() {
     const dispatch = useDispatch()
@@ -58,6 +59,12 @@ export default function Header() {
         window.scrollTo(0, 0);
     }
 
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = (lng) => {
+      i18n.changeLanguage(lng);
+    };
+
     return (
     <header>
         <div className="container-header">
@@ -68,10 +75,10 @@ export default function Header() {
                 <div className="header-middle">
                     <ul>
                         <li>
-                            <NavLink to="/"  onClick={() => {windowScrollUp()}}>Home</NavLink>
+                            <NavLink to="/"  onClick={() => {windowScrollUp()}}>{t('nav_home')}</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/universities" onClick={() => {windowScrollUp()}}>Universities</NavLink>
+                            <NavLink to="/universities" onClick={() => {windowScrollUp()}}>{t('nav_universities')}</NavLink>
                         </li>
                         <li>
                             <Link 
@@ -86,7 +93,7 @@ export default function Header() {
                                 onSetActive={handleSetActive}
                                 onClick={() => handleLinkClick('contact-footer')}
                             >
-                                Contact
+                                {t('nav_contact')}
                             </Link>
                         </li>
                     </ul>
@@ -99,25 +106,25 @@ export default function Header() {
                         </li>
                         <div className='language-section'>
                             <li className='language-button'>
-                                <a onClick={showLanguageContainer} style={{cursor: 'pointer', userSelect: 'none'}}>Language &#x25BE;</a>
+                                <a onClick={showLanguageContainer} style={{cursor: 'pointer', userSelect: 'none'}}>{t('nav_language')} &#x25BE;</a>
                             </li>
                             {isLanguageContainerVisible && (
                                 <div className='languages-container-header'>
-                                    <a>
+                                    <a onClick={()=>{changeLanguage('ru')}}>
                                         <img src={`${process.env.PUBLIC_URL}/images/russia-flag-round-circle-icon.png`} alt={'russian-lang'}/>
 
-                                        Russian
+                                        {t('nav_lang_ru')}
                                     </a>
-                                    <a>
+                                    <a onClick={()=>{changeLanguage('kz')}}>
                                         <img src={`${process.env.PUBLIC_URL}/images/kazakhstan-flag-round-circle-icon.png`} alt={'kazakh-lang'} />
 
-                                        Kazakh
+                                        {t('nav_lang_kz')}
                                     </a>
                                     
-                                    <a>
-                                        <img src={`${process.env.PUBLIC_URL}/images/uk-flag-round-circle-icon.png`} alt={'kazakh-lang'}  />
+                                    <a onClick={()=>{changeLanguage('en')}}>
+                                        <img src={`${process.env.PUBLIC_URL}/images/uk-flag-round-circle-icon.png`} alt={'eng-lang'}  />
 
-                                        English
+                                        {t('nav_lang_en')}
                                     </a>
                                 </div>
                             )}
@@ -139,7 +146,7 @@ export default function Header() {
                             </div>
                                 
                                 ) : (
-                                    <li className='profile-button'><NavLink to="/login" style={{color: 'black'}} onClick={() => {windowScrollUp()}}>Login</NavLink></li>
+                                    <li className='profile-button'><NavLink to="/login" style={{color: 'black'}} onClick={() => {windowScrollUp()}}>{t('nav_login')}</NavLink></li>
                                 )
                         }
                         
@@ -157,10 +164,10 @@ export default function Header() {
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
                 </li>
                 <li>
-                    <NavLink to="/" onClick={() => {windowScrollUp()}}>Home</NavLink>
+                    <NavLink to="/" onClick={() => {windowScrollUp()}}>{t('nav_home')}</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/universities" onClick={() => {windowScrollUp()}}>Universities</NavLink>
+                    <NavLink to="/universities" onClick={() => {windowScrollUp()}}>{t('nav_universities')}</NavLink>
                 </li>
                 <li>
                     <Link 
@@ -174,18 +181,18 @@ export default function Header() {
                                 onSetActive={handleSetActive}
                                 onClick={() => handleLinkClick('contact-footer')}
                             >
-                                Contact
+                                {t('nav_contact')}
                     </Link>
                     
                 </li>
                 <li onClick={showLanguageContainer2}>
-                    <a>Language &#x25BE;</a>
+                    <a>{t('nav_language')} &#x25BE;</a>
                 </li>
                 {isLanguageContainer2Visible && (
                 <div className='languages-container'>
-                    <a>Kazakh</a>
-                    <a>Russian</a>
-                    <a>English</a>
+                    <a onClick={()=>{changeLanguage('kz')}}>{t('nav_lang_kz')}</a>
+                    <a onClick={()=>{changeLanguage('ru')}}>{t('nav_lang_ru')}</a>
+                    <a onClick={()=>{changeLanguage('en')}}>{t('nav_lang_en')}</a>
                 </div>
                 )}
                 { isAuth ? 
@@ -194,11 +201,11 @@ export default function Header() {
                 </li>) 
                     : 
                 (<li>
-                    <NavLink to={'/login'} href='/' onClick={() => {windowScrollUp()}}>Login</NavLink>
+                    <NavLink to={'/login'} href='/' onClick={() => {windowScrollUp()}}>{t('nav_login')}</NavLink>
                 </li>) }
                 { isAuth ? 
                 (<li>
-                    <Link onClick={logoutHandler} style={{cursor: 'pointer'}}>Logout</Link>
+                    <Link onClick={logoutHandler} style={{cursor: 'pointer'}}>{t('nav_logout')}</Link>
                 </li>) : (<li></li>) }                             
             </ul>
         </div>

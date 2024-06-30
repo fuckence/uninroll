@@ -1,0 +1,40 @@
+{
+    "nav_home": "Home",
+    "nav_universities": "Universities",
+    "nav_contact": "Contacts",
+    "nav_language": "Languages",
+    "nav_login": "Login",
+    "nav_logout": "Logout",
+    "nav_lang_kz": "Kazakh",
+    "nav_lang_ru": "Russian",
+    "nav_lang_en": "English",
+
+
+    "main_start_text_1": "Your <1>future</1><2 /> starts here",
+    "main_start_text_2": "Apply to <1>universities</1> for the first time with <1>us</1>",
+    "button_application": "Start your application",
+    "main_right_text_location": "Located in <1 /> Kazakhstan",
+
+
+    "categories_heading": "Find <1>Your</1> Dream <1>Major</1>",
+    "category_1": "HR",
+    "category_2": "Business",
+    "category_3": "Marketing & Communication",
+    "category_4": "Management",
+    "category_5": "Journalism",
+    "category_6": "Finance",
+    "category_7": "Biology",
+    "category_8": "Law",
+    "category_9": "Computer Science",
+
+ 
+    "uninroll_definition": "streamlines the university application process, using advanced technology to simplify selecting universities, submitting applications, and tracking progress.",
+    
+      
+    
+    "popular_heading": "Popular student choices",
+    "kimep_university": "KIMEP University",
+    "kimep_university_category": "Category:",
+    "kimep_university_location": "Location: Almaty, Kazakhstan",
+    "kimep_university_definition": "KIMEP University, founded in 1992 in Almaty, Kazakhstan, is a renowned private institution offering top-tier education in business, economics, and social sciences. Accredited nationally and internationally, KIMEP provides undergraduate, graduate, and doctoral programs taught by a diverse faculty. Known for its commitment to excellence and global outlook, KIMEP prepares students for successful careers through innovative programs and modern facilities."
+}

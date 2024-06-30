@@ -5,34 +5,7 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <App />,
-//   },
-//   {
-//     path: "/universities",
-//     element: <Universities />,
-//   },
-//   {
-//     path: "/universities/:universityName",
-//     element: <University />,
-//   },
-//   {
-//     path: "/login",
-//     element: <LoginPage />,
-//   },
-//   {
-//     path: "/register",
-//     element: <RegisterPage />,
-//   },
-//   {
-//     path: "/profile",
-//     element: <LoginPage />,
-//   },
-
-// ], { basename: process.env.PUBLIC_URL });
+import './i18n.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

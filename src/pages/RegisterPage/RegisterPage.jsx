@@ -40,14 +40,14 @@ export default function RegisterPage() {
             }
             setMessages([{ type: 'success', text: 'Successful registration' }]);
         } catch (error) {
-            const errorText = error.response?.data?.errors ? 
-                error.response.data.errors.map(err => ({ type: 'error', text: err.msg })) : 
-                [{ type: 'error', text: error.message || "Unknown error" }];
+            let errorText;
+            if (error.response?.data?.errors) {
+                errorText = error.response.data.errors.map(err => ({ type: 'error', text: err.msg }));
+            } else {
+                errorText = [{ type: 'error', text: "Server Internal error. Try later" }];
+            }
             setMessages(errorText);
-        } finally {
-            setPassword('');
-            setEmail('')
-        }
+        } 
     }
 
     return (
