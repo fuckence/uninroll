@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link as ScrollLink, Events, animateScroll as scroll } from 'react-scroll';
 import './UniversityNavigation.css';
+import { useTranslation } from 'react-i18next';
 
 export default function UniversityNavigation() {
+  const { t, i18n } = useTranslation() 
   const [activeLink, setActiveLink] = useState(null); // Используйте стейт для отслеживания активной ссылки
   
   const handleSetActive = (to) => {
@@ -26,7 +28,7 @@ export default function UniversityNavigation() {
           onSetActive={handleSetActive}
           onClick={() => handleLinkClick('overview-section')}
         >
-          Overview
+          {t('university_overview_section_heading')}
         </ScrollLink>
         <ScrollLink
           to='faculties-section'
@@ -38,7 +40,7 @@ export default function UniversityNavigation() {
           onSetActive={handleSetActive}
           onClick={() => handleLinkClick('faculties-section')}
         >
-          Faculties
+          {t('university_faculties_section_heading')}
         </ScrollLink>
         <ScrollLink
           to='price-section'
@@ -50,7 +52,7 @@ export default function UniversityNavigation() {
           onSetActive={handleSetActive}
           onClick={() => handleLinkClick('price-section')}
         >
-          Education price
+          {t('university_education_price_section_heading')}
         </ScrollLink>
         <ScrollLink
           to='admission-section'
@@ -62,7 +64,7 @@ export default function UniversityNavigation() {
           onSetActive={handleSetActive}
           onClick={() => handleLinkClick('admission-section')}
         >
-          Admission Process
+          {t('university_admission_process_section_heading')}
         </ScrollLink>
       </div>
     </div>

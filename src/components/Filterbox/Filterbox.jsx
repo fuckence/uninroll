@@ -3,29 +3,31 @@ import './Filterbox.css'
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import Dropdown from '../Dropdown/Dropdown';
+import { useTranslation } from 'react-i18next';
 
 
 export default function Filterbox({ filters, onChange, onRangeChange }) {
-    const locations = ["All", "Almaty, Kazakhstan", "Astana, Kazakhstan", "Atyrau, Kazakhstan"];
+    const { t, i18n } = useTranslation();
+    const locations = [t('location_all'), t('location_almaty_kazakhstan'), t('location_astana_kazakhstan') ,t('location_atyrau_kazakhstan')];
     const majors = [
-      "All",
-      "Marketing & Communication",
-      "International School of Economics",
-      "Oil and gas faculty",
-      "Pedagogical sciences",
-      "Arts and Humanities",
-      "Social sciences, Journalism and Information",
-      "Business, Management and Law",
-      "Natural Sciences, Mathematics and Statistics",
-      "Information and Communication Technologies",
-      "Engineering, Manufacturing and Construction Industries"
+      t('major_all'),
+      t('major_marketing_communication'),
+      t('major_international_school_of_economics'),
+      t('major_oil_and_gas_faculty'),
+      t('major_pedagogical_sciences'),
+      t('major_arts_humanities'),
+      t('major_social_sciences_journalism_and_information'),
+      t('major_business_management_and_law'),
+      t('major_natural_sciences_mathematics_and_statistics'),
+      t('major_information_and_communication_technologies'),
+      t('major_engineering_manufacturing_and_construction_industries')
     ];
   
     return (
       <div className="filterbox">
         <div>
           <Dropdown
-            label="Location"
+            label={t('filter_location')}
             name="location"
             options={locations}
             value={filters.location}
@@ -34,7 +36,7 @@ export default function Filterbox({ filters, onChange, onRangeChange }) {
         </div>
         <div>
           <Dropdown
-            label="Major"
+            label={t('filter_major')}
             name="major"
             options={majors}
             value={filters.major}
@@ -42,7 +44,7 @@ export default function Filterbox({ filters, onChange, onRangeChange }) {
           />
         </div>
         <div className='inputbox'>
-          <label>Price Range:</label>
+          <label>{t('filter_price_range')}</label>
           <div className='price-inputs'>
             <input
               type="number"

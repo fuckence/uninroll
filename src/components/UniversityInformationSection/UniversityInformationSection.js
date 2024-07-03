@@ -5,9 +5,11 @@ import TableFaculty from '../TableFaculty/TableFaculty'
 import { useDispatch, useSelector } from 'react-redux'
 import { checkIsAuth } from '../../redux/features/auth/authSlice'
 import { sendApplicationEmail, resetEmailState } from '../../redux/features/email/emailSlice'
+import { useTranslation, Trans } from 'react-i18next';
 
 
 export default function UniversityInformationSection({university}) {
+    const { t, i18n } = useTranslation();
     const dispatch = useDispatch()
     const isAuth = useSelector(checkIsAuth)
     const user = useSelector(state => state.auth.user);
@@ -35,31 +37,29 @@ export default function UniversityInformationSection({university}) {
             <div id='overview-section'>
             <h4 className='underline-red'>{university.name}</h4>
             <p>
-                {university.short_name}  is an educational institution dedicated to learning and conducting productive research. 
-                It holds leading positions in Kazakhstan in scientific, humanitarian, economic, political, and innovative programs. 
-                The university's mission is to prepare highly qualified, intellectual scholars, businessmen, and political leaders.
+                {university.short_name}  {t('university_common_description')}
             </p>
             </div>
             <div className='info-wrap-container'>
-                <InfoWrapItem uni_info={'Location:'} uni_info2={university.location} icon={'location_icon.svg'}/>
-                <InfoWrapItem uni_info={'Foundation year:'} uni_info2={university.foundation_year} icon={'calendar_icon.svg'}/>
-                <InfoWrapItem uni_info={'Students:'} uni_info2={university.students_number} icon={'school_icon.svg'}/>
+                <InfoWrapItem uni_info={t('university_common_location')} uni_info2={university.location[i18n.language]} icon={'location_icon.svg'}/>
+                <InfoWrapItem uni_info={t('university_common_foundation_year')} uni_info2={university.foundation_year} icon={'calendar_icon.svg'}/>
+                <InfoWrapItem uni_info={t('university_common_students')} uni_info2={university.students_number} icon={'school_icon.svg'}/>
             </div>
             <div className='faculties' id='faculties-section'>
-                <h4 className='underline-red' style={{marginTop: '30px'}}>Faculties</h4>
+                <h4 className='underline-red' style={{marginTop: '30px'}}>{t('university_faculties_section_heading')}</h4>
                 <TableFaculty university={university} />
             </div>
             <div className='' id='price-section'>
-                <h4 className='underline-red' style={{marginTop: '30px'}}>Education price:</h4>
-                    <p>Price per credit: {university.education_price_credit} tg</p>
-                    <p>Credits per year: {university.credits_per_year}</p>
-                    <p>Price per year: {university.education_price_year} tg</p>
+                <h4 className='underline-red' style={{marginTop: '30px'}}>{t('university_education_price_section_heading')}</h4>
+                    <p>{t('university_common_price_per_credit')} {university.education_price_credit} tg</p>
+                    <p>{t('university_common_credits_per_year')} {university.credits_per_year}</p>
+                    <p>{t('university_common_price_per_year')} {university.education_price_year} tg</p>
             </div>
             <div className='' id='admission-section'>
-                <h4 className='underline-red' style={{marginTop: '30px'}}>Admission process:</h4>
-                <p>Requirements for bachelor's and master's degrees:</p>
+                <h4 className='underline-red' style={{marginTop: '30px'}}>{t('university_admission_process_section_heading')}</h4>
+                <p>{t('university_requirements_application_text')}</p>
                 <ul>
-                    {university.requirements[0].en.map((requirement, index) => (
+                    {university.requirements[i18n.language].map((requirement, index) => (
                         <li key={index}>{requirement}</li>
                     ))}
                 </ul>
@@ -78,12 +78,15 @@ export default function UniversityInformationSection({university}) {
                                 onFileChange={handleFileChange}/>
                 </div>
                 <button className='save-button' onClick={handleSaveFiles} >Save</button> */}
-                {/* <p>{connectionStatus}</p> */}
-                <p>Upload the required files in <span className='important-text'>PDF</span> format to your profile page</p>
+                <p>
+                    <Trans i18nKey="apply_pdf_requirement">
+                        Upload the required files in <span className='important-text'>PDF</span> format to your profile page
+                    </Trans>
+                </p>
                 { isAuth ? (
-                    <button className='save-button' onClick={handleSaveFiles} >Apply</button>
+                    <button className='save-button' onClick={handleSaveFiles} >{t('apply_button')}</button>
                 ) : (
-                    <p className='important-text'>You must be logged in to apply</p>
+                    <p className='important-text'>{t('apply_caution')}</p>
                 )}
                 {emailStatus === 'loading' && <p>Sending application...</p>}
                 {emailStatus === 'succeeded' && <p>{emailMessage}</p>}

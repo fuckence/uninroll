@@ -30,11 +30,97 @@
  
     "uninroll_definition": "streamlines the university application process, using advanced technology to simplify selecting universities, submitting applications, and tracking progress.",
     
-      
     
     "popular_heading": "Popular student choices",
+    "university_category": "Category: ",
+    "university_location": "Location: ",
+    "apply_button": "Apply",
+    "requirements_heading": "Requirements:",
+    "requirement_1": "High School Diploma",
+    "requirement_2": "Official transcripts of academic reports;",
+    "requirement_3": "Standardized test scores (if applicable);",
+    "requirement_4": "A personal statement or essay outlining academic and career goals;",
+    "requirement_5": "Proof of English language proficiency (if English is not the applicant's native language);",
+    "requirement_6": "Any additional requirements provided for by the selected training program.",
+
     "kimep_university": "KIMEP University",
-    "kimep_university_category": "Category:",
+    "kimep_university_category": "Marketing & Communication",
     "kimep_university_location": "Location: Almaty, Kazakhstan",
-    "kimep_university_definition": "KIMEP University, founded in 1992 in Almaty, Kazakhstan, is a renowned private institution offering top-tier education in business, economics, and social sciences. Accredited nationally and internationally, KIMEP provides undergraduate, graduate, and doctoral programs taught by a diverse faculty. Known for its commitment to excellence and global outlook, KIMEP prepares students for successful careers through innovative programs and modern facilities."
+    "kimep_university_description": "KIMEP University, founded in 1992 in Almaty, Kazakhstan, is a renowned private institution offering top-tier education in business, economics, and social sciences. Accredited nationally and internationally, KIMEP provides undergraduate, graduate, and doctoral programs taught by a diverse faculty. Known for its commitment to excellence and global outlook, KIMEP prepares students for successful careers through innovative programs and modern facilities.",
+
+    "mnu": "Maqsut Narikbayev University (ex. KazGUU)",
+    "mnu_category": "International School of Economics",
+    "mnu_location": "Astana, Kazakhstan",
+    "mnu_description": "Experience excellence at Maqsut Narikbayev University! University offers top-notch education, a robust network, and a dynamic campus environment. With cutting-edge facilities and a supportive community, your journey to success begins here. Join and thrive academically and socially!",
+
+    "atyrau_oil": "Atyrau Oil and Gas University",
+    "atyrau_oil_category": "Oil and gas faculty",
+    "atyrau_oil_location": "Atyrau, Kazakhstan",
+    "atyrau_oil_description": "Discover Atyrau Oil and Gas University, your premier destination for excellence in energy education. Located at the heart of Kazakhstan's oil-rich region, it offers cutting-edge programs, expert faculty, and unparalleled industry connections. Join us and embark on a rewarding career journey in the dynamic field of energy.",
+
+
+    "footer_contact": "Contact",
+    "footer_address": "Kabanbay Batyr avenue, 52<br></br>Astana NQZ, 010000",
+    "footer_phone": "+ 7 (701) 771 4774",
+    "footer_hours": "Hours",
+    "footer_mon_fri_label": "Mon to Fri:",
+    "footer_mon_fri_hours": "7:30 am — 1:00 am",
+    "footer_sat_label": "Sat:",
+    "footer_sat_hours": "9:00 am — 1:00 am",
+    "footer_sun_label": "Sun:",
+    "footer_sun_hours": "9:00 am — 11:30 pm",
+    "footer_apply_support": "Apply support",
+    "footer_question_placeholder": "Enter your question...",
+    "footer_send_button": "Send",
+    "footer_ask_question": "Ask a question you are interested in",
+    "footer_copyright": "Uni❜n❜roll © 2024 All Rights Reserved.",
+
+    "filter_location": "Location",
+    "filter_major": "Major",
+    "filter_price_range": "Price Range",
+
+    "location_all": "All",
+    "location_almaty_kazakhstan": "Almaty, Kazakhstan",
+    "location_astana_kazakhstan": "Astana, Kazakhstan",
+    "location_atyrau_kazakhstan": "Atyrau, Kazakhstan",
+
+    "major_all": "All",
+    "major_marketing_communication": "Marketing & Communication",
+    "major_international_school_of_economics": "International School of Economics",
+    "major_oil_and_gas_faculty": "Oil and gas faculty",
+    "major_pedagogical_sciences": "Pedagogical sciences",
+    "major_arts_humanities": "Arts and Humanities",
+    "major_social_sciences_journalism_and_information": "Social sciences, Journalism and Information",
+    "major_business_management_and_law": "Business, Management and Law",
+    "major_natural_sciences_mathematics_and_statistics": "Natural Sciences, Mathematics and Statistics",
+    "major_information_and_communication_technologies": "Information and Communication Technologies",
+    "major_engineering_manufacturing_and_construction_industries": "Engineering, Manufacturing and Construction Industries",
+
+    "universities_heading": "Universities",
+    "university_majors": "Majors: ",
+
+    "university_common_description": "is an educational institution dedicated to learning and conducting productive research. It holds leading positions in Kazakhstan in scientific, humanitarian, economic, political, and innovative programs. The university's mission is to prepare highly qualified, intellectual scholars, businessmen, and political leaders.",
+    "university_common_location": "Location: ",
+    "university_common_foundation_year": "Foundation year: ",
+    "university_common_students" : "Students: ",
+    "university_common_price_per_credit": "Price per credit: ",
+    "university_common_credits_per_year": "Credits per year: ",
+    "university_common_price_per_year": "Price per year: ",
+
+    "major_common_name": "Name",
+    "major_common_degrees": "Degrees",
+    "major_common_duration": "Duration",
+    "major_common_degrees_all": "Bachelor & Master",
+    "major_common_duration_all": "4 years",
+
+    "university_overview_section_heading": "Overview",
+    "university_faculties_section_heading": "Faculties",
+    "university_education_price_section_heading": "Education price",
+    "university_admission_process_section_heading": "Admission Process",
+    "university_requirements_application_text": "Requirements for bachelor's and master's degrees:",
+
+    "apply_pdf_requirement": "Upload the required files in <1>PDF</1> format to your profile page",
+    "apply_caution" : "You must be logged in to apply"
+
+
 }
