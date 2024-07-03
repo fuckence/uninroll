@@ -66,7 +66,7 @@ export const DocumentsSection = () => {
                         <div className='file-container' key={file._id}>
                             <p>{file.filename}</p>
                             {file.path && (
-                                <a href={`http://localhost:5000/${file.path.replace(/\\/g, '/')}`} target="_blank" rel="noopener noreferrer">View</a>
+                                <a href={`http://localhost:8080/${file.path.replace(/\\/g, '/')}`} target="_blank" rel="noopener noreferrer">View</a>
                             )}
                         </div>
                     ))}
