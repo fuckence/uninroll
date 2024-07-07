@@ -15,6 +15,8 @@ export default function Header() {
         window.localStorage.removeItem('token')
     }
     const fullname = useSelector(state => state.auth.user?.fullname)
+    const username1 = useSelector(state => state.auth.user?.username)
+    
 
     useEffect(()=>{
         if(isAuth) {
@@ -23,12 +25,16 @@ export default function Header() {
 
     },[isAuth, dispatch])
 
-    useEffect(()=>{
-        if(fullname) {
-            const fullnameSplited = fullname.split(' ')
-            const newusername = fullnameSplited[1]
-            setUsername(newusername)
+     useEffect(()=>{
+        if(!username1) {
+            if(fullname) {
+                const fullnameSplited = fullname.split(' ')
+                const newusername = fullnameSplited[1]
+                setUsername(newusername)
+            }
         }
+        setUsername(username1)
+        
     }, [fullname])
 
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);

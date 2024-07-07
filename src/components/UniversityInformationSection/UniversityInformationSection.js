@@ -6,16 +6,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import { checkIsAuth } from '../../redux/features/auth/authSlice'
 import { sendApplicationEmail, resetEmailState } from '../../redux/features/email/emailSlice'
 import { useTranslation, Trans } from 'react-i18next';
+import Dropdown from '../Dropdown/Dropdown'
 
 
 export default function UniversityInformationSection({university}) {
-    const { t, i18n } = useTranslation();
+    const [major, setMajor] = useState('')
+    const { t, i18n } = useTranslation()
     const dispatch = useDispatch()
     const isAuth = useSelector(checkIsAuth)
     const user = useSelector(state => state.auth.user);
     const emailStatus = useSelector(state => state.email.status);
     const emailError = useSelector(state => state.email.error);
     const emailMessage = useSelector(state => state.email.message);
+    const majors = university.majors[i18n.language]
 
     useEffect(() => {
         return () => {
@@ -25,11 +28,15 @@ export default function UniversityInformationSection({university}) {
 
     const handleSaveFiles = async () => {
         try {
-            await dispatch(sendApplicationEmail({ userId: user._id, fullname: user.fullname, email: university.email }));
+            await dispatch(sendApplicationEmail({ userId: user._id, fullname: user.fullname, email: university.email, major: major }));
         } catch (error) {
             console.error('Error sending application:', error);
         }
     };
+
+    const handleMajorChange = (e)=> {
+        setMajor(e.target.value)
+    }
 
     return (
     <div className='university-full-information-section'>
@@ -84,7 +91,17 @@ export default function UniversityInformationSection({university}) {
                     </Trans>
                 </p>
                 { isAuth ? (
-                    <button className='save-button' onClick={handleSaveFiles} >{t('apply_button')}</button>
+                    <div>
+                        <Dropdown
+                            label={t('filter_major')}
+                            name="major"
+                            options={majors}
+                            value={major}
+                            onChange={handleMajorChange}
+                        />
+                        <button className='save-button' onClick={handleSaveFiles} >{t('apply_button')}</button>
+                    </div>
+                    
                 ) : (
                     <p className='important-text'>{t('apply_caution')}</p>
                 )}

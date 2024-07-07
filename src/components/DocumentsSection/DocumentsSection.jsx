@@ -4,10 +4,6 @@ import { uploadFiles, fetchFiles } from '../../redux/features/file/fileSlice';
 import FileUpload from '../FileUpload/FileUpload';
 import './DocumentsSection.css'
 
-const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-};
-
 const fileDisplayNames = {
     'uni-cert': 'UNI Certificate',
     'photo-3x4': 'Photo 3x4',

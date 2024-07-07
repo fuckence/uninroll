@@ -3,9 +3,9 @@ import axios from '../../../api/axios'
 
 export const sendApplicationEmail = createAsyncThunk(
     'email/sendApplicationEmail',
-    async ({ userId, fullname, email }, { rejectWithValue }) => {
+    async ({ userId, fullname, email, major }, { rejectWithValue }) => {
         try {
-            const response = await axios.post('/email/send-email', { userId, fullname, email });
+            const response = await axios.post('/email/send-email', { userId, fullname, email, major });
             return response.data;
         } catch (error) {
             return rejectWithValue(error.response.data);
