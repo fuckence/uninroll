@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'https://77.243.81.210:8080/api',
+    baseURL: 'https://uninroll.com/api',
     validateStatus: () => true,
 });
 
