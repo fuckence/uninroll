@@ -62,7 +62,7 @@ export const DocumentsSection = () => {
                         <div className='file-container' key={file._id}>
                             <p>{file.filename}</p>
                             {file.path && (
-                                <a href={`uninroll.com/${file.path.replace(/\\/g, '/')}`} target="_blank" rel="noopener noreferrer">View</a>
+                                <a href={`/${file.path.replace(/\\/g, '/')}`} target="_blank" rel="noopener noreferrer">View</a>
                             )}
                         </div>
                     ))}
