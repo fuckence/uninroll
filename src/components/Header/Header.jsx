@@ -76,7 +76,9 @@ export default function Header() {
         <div className="container-header">
             <div className="header-wrap">
                 <div className="header-half header-left">
-                    <img src={`${process.env.PUBLIC_URL}/images/logo-nobg2.png`} alt={'logo'} />
+                    <NavLink to="/"  onClick={() => {windowScrollUp()}}>
+                        <img src={`${process.env.PUBLIC_URL}/images/logo-nobg2.png`} alt={'logo'} />
+                    </NavLink>
                 </div>
                 <div className="header-middle">
                     <ul>
