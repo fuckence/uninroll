@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { uploadFiles, fetchFiles } from '../../redux/features/file/fileSlice';
 import FileUpload from '../FileUpload/FileUpload';
 import './DocumentsSection.css'
+import { useTranslation } from 'react-i18next';
 
 const fileDisplayNames = {
     'uni-cert': 'UNI Certificate',
@@ -12,6 +13,7 @@ const fileDisplayNames = {
 };
 
 export const DocumentsSection = () => {
+    const { t } = useTranslation()
     const dispatch = useDispatch();
     const { files, uploadStatus, fetchStatus, error } = useSelector(state => state.files);
     const [fileData, setFileData] = useState({
@@ -54,22 +56,22 @@ export const DocumentsSection = () => {
 
     return (
         <div className='documents-container'>
-            <h3>Available Documents</h3>
-            {fetchStatus === 'loading' && <p>Loading...</p>}
+            <h3>{t('available_documents')}</h3>
+            {fetchStatus === 'loading' && <p>{t('state_loading')}</p>}
             {fetchStatus === 'succeeded' && (
                 <div className='files-container'>
                     {files && files.map(file => (
                         <div className='file-container' key={file._id}>
                             <p>{file.filename}</p>
                             {file.path && (
-                                <a href={`/api/${file.path.replace(/\\/g, '/')}`} target="_blank" rel="noopener noreferrer">View</a>
+                                <a href={`/api/${file.path.replace(/\\/g, '/')}`} target="_blank" rel="noopener noreferrer">{t('view_document')}</a>
                             )}
                         </div>
                     ))}
                 </div>
             )}
-            {fetchStatus === 'failed' && <p>Failed to get files</p>}
-            <h3>Upload Documents</h3>
+            {fetchStatus === 'failed' && <p>{t('state_failed_files')}</p>}
+            <h3>{t('upload_documents')}</h3>
             {Object.entries(fileData).map(([key, value], index) => (
                 <div key={`input-${key}-${index}`}> {/* Construct a unique key for inputs */}
                     <FileUpload
@@ -81,10 +83,10 @@ export const DocumentsSection = () => {
                 />
                 </div>
             ))}
-            {uploadStatus === 'loading' && <div className='server-message-block'>Uploading...</div>}
-            {uploadStatus === 'succeeded' && <div className='server-message-block'>Files uploaded successfully!</div>}
+            {uploadStatus === 'loading' && <div className='server-message-block'>{t('state_uploading_files')}</div>}
+            {uploadStatus === 'succeeded' && <div className='server-message-block'>{t('state_uploading_successful')}!</div>}
             {uploadStatus === 'failed' && <div className='server-message-block'>Error: {error}</div>}
-            <button onClick={handleFileUpload} disabled={uploadStatus === 'loading'} className='upload-files-button'>Upload Files</button>
+            <button onClick={handleFileUpload} disabled={uploadStatus === 'loading'} className='upload-files-button'>{t('upload_files_button')}</button>
             
         </div>
     );

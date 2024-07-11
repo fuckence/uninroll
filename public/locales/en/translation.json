@@ -1,4 +1,5 @@
 {
+
     "login": "Login",
     "register": "Register",
     "sign_email": "Email",
@@ -128,7 +129,26 @@
     "university_requirements_application_text": "Requirements for bachelor's and master's degrees:",
 
     "apply_pdf_requirement": "Upload the required files in <1>PDF</1> format to your profile page",
-    "apply_caution" : "You must be logged in to apply"
+    "apply_caution" : "You must be logged in to apply",
 
-
+    "profile_heading": "User Profile",
+    "profile_account": "Account",
+    "profile_password": "Password",
+    "profile_documents": "Documents",
+    "account_username": "Username",
+    "account_fullname": "Fullname",
+    "account_phonenumber": "Phone number",
+    "account_update": "Update",
+    "account_cancel": "Cancel",
+    "available_documents": "Available Documents",
+    "view_document": "View",
+    "upload_documents": "Upload Documents",
+    "state_uploading_files": "Uploading...",
+    "state_uploading_successful" : "Files uploaded successfully",
+    "upload_files_button": "Upload Files",
+    "state_loading": "Loading...",
+    "state_failed_files": "Failed to get files",
+    "old_password": "Old password",
+    "new_password": "New password",
+    "confirm_password": "Confirm password"
 }

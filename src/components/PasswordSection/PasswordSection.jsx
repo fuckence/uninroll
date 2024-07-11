@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updatePassword, getMe } from '../../redux/features/auth/authSlice';
 import { unwrapResult } from '@reduxjs/toolkit'
 import '../AccountSection/AccountSection.css'
+import { useTranslation } from 'react-i18next';
 
 export const PasswordSection = () => {
+    const {t} = useTranslation()
     const [passwords, setPasswords] = useState({
         password: '',
         newpassword: '',
@@ -61,13 +63,13 @@ export const PasswordSection = () => {
     return (
         <div className='account-section-container'>
             <div className='account-details-section'>
-                <label>Old password:
+                <label>{t('old_password')}:
                     <input type="password" name="password" value={passwords.password} onChange={handlePasswordInputChange} />
                 </label>
-                <label>New password:
+                <label>{t('new_password')}:
                     <input type="password" name="newpassword" value={passwords.newpassword} onChange={handlePasswordInputChange} />
                 </label>
-                <label>Confirm password:
+                <label>{t('confirm_password')}:
                     <input type="password" name="newpassword2" value={passwords.newpassword2} onChange={handlePasswordInputChange} />
                 </label>
                 {messages.map((msg, index) => (
@@ -76,8 +78,8 @@ export const PasswordSection = () => {
             {/* {serverMessage && <div className="server-message-block">{serverMessage}</div>}   */}
             </div> 
             <div className='account-button-group'>
-                <button onClick={handleUpdatePassword} disabled={isLoading}>Update</button>
-                <button onClick={handleCancelPassword}>Cancel</button>
+                <button onClick={handleUpdatePassword} disabled={isLoading}>{t('account_update')}</button>
+                <button onClick={handleCancelPassword}>{t('account_cancel')}</button>
             </div>
         </div>
     )

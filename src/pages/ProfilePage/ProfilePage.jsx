@@ -6,6 +6,7 @@ import './ProfilePage.css';
 import { AccountSection } from '../../components/AccountSection/AccountSection';
 import { PasswordSection } from '../../components/PasswordSection/PasswordSection';
 import { DocumentsSection } from '../../components/DocumentsSection/DocumentsSection';
+import { useTranslation } from 'react-i18next';
 
 export default function ProfilePage() {
     const user = useSelector(state => state.auth.user)
@@ -18,7 +19,7 @@ export default function ProfilePage() {
     const handleCancelUpdateGeneral = () => {
         dispatch(getMe());
     };
-
+    const { t, i18n } = useTranslation()
     const [activeTab, setActiveTab] = useState('documents');
 
 
@@ -26,7 +27,7 @@ export default function ProfilePage() {
         <>
             <Header />
             <div className='page-container'>
-                <h1>User Profile</h1>
+                <h1>{t('profile_heading')}</h1>
                 <div className="profile-container">
                     <div className='profile-container-left'>
                         <img src={`${process.env.PUBLIC_URL}/images/user_icon.svg`} width={230} height={230}/>
@@ -34,17 +35,17 @@ export default function ProfilePage() {
                         <ul>
                             <li>
                                 <a className={`account-sidebar-link ${activeTab === 'account' ? 'active' : ''}`} onClick={() => setActiveTab('account')}>
-                                    Account
+                                    {t('profile_account')}
                                 </a>
                             </li>
                             <li>
                                 <a className={`account-sidebar-link ${activeTab === 'password' ? 'active' : ''}`} onClick={() => setActiveTab('password')}>
-                                    Password
+                                    {t('profile_password')}
                                 </a>
                             </li>
                             <li>
                                 <a className={`account-sidebar-link rounded-bottom-corners ${activeTab === 'documents' ? 'active' : ''}`} onClick={() => setActiveTab('documents')}>
-                                    Documents
+                                    {t('profile_documents')}
                                 </a>
                             </li>
                         </ul>

@@ -123,6 +123,27 @@
     "university_requirements_application_text": "Бакалавриат пен магистратураға қойылатын талаптар:",
     
     "apply_pdf_requirement": "Профиль бетіне <1>PDF</1> пішіміндегі қажетті файлдарды жүктеп салыңыз",
-    "apply_caution" : "Өтініш беру үшін жүйеге кіруіңіз керек"
+    "apply_caution" : "Өтініш беру үшін жүйеге кіруіңіз керек",
 
+    
+    "profile_heading": "Пайдаланушы профилі",
+    "profile_account": "Аккаунт",
+    "profile_password": "Құпия сөз",
+    "profile_documents": "Құжаттар",
+    "account_username": "Пайдаланушы аты",
+    "account_fullname": "Толық аты",
+    "account_phonenumber": "Телефон нөмірі",
+    "account_update": "Жаңарту",
+    "account_cancel": "Бас тарту",
+    "available_documents": "Қолжетімді құжаттар",
+    "view_document": "Көру",
+    "upload_documents": "Құжаттарды жүктеу",
+    "state_uploading_files": "Жүктеу...",
+    "state_uploading_successful": "Файлдар сәтті жүктелді",
+    "upload_files_button": "Файлдарды жүктеу",
+    "state_loading": "Жүктеу...",
+    "state_failed_files": "Файлдарды алу сәтсіз аяқталды",
+    "old_password": "Ескі құпия сөз",
+    "new_password": "Жаңа құпия сөз",
+    "confirm_password": "Құпия сөзді растау"
 }

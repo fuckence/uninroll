@@ -84,7 +84,7 @@
 
 
     "filter_location": "Местоположение",
-    "filter_major": "Основной",
+    "filter_major": "специальность",
     "filter_price_range": "Стоимость обучения",
 
     "location_all": "Все",
@@ -129,6 +129,29 @@
 
     
     "apply_pdf_requirement": "Загрузите необходимые файлы в формате <1>PDF</1> на страницу своего профиля",
-    "apply_caution": "Вы должны войти в систему, чтобы подать заявку"
+    "apply_caution": "Вы должны войти в систему, чтобы подать заявку",
 
+
+    "profile_heading": "Профиль пользователя",
+    "profile_account": "Аккаунт",
+    "profile_password": "Пароль",
+    "profile_documents": "Документы",
+    "account_username": "Имя пользователя",
+    "account_fullname": "Полное имя",
+    "account_phonenumber": "Номер телефона",
+    "account_update": "Обновить",
+    "account_cancel": "Отменить",
+    "available_documents": "Доступные документы",
+    "view_document": "Просмотр",
+    "upload_documents": "Загрузить документы",
+    "state_uploading_files": "Загрузка...",
+    "state_uploading_successful": "Файлы успешно загружены",
+    "upload_files_button": "Загрузить файлы",
+    "state_loading": "Загрузка...",
+    "state_failed_files": "Не удалось получить файлы",
+    "old_password": "Старый пароль",
+    "new_password": "Новый пароль",
+    "confirm_password": "Подтвердите пароль"
+
+    
 }
