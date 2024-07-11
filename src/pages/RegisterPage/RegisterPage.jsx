@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { unwrapResult } from '@reduxjs/toolkit'
 import { registerUser } from '../../redux/features/auth/authSlice'
 import { checkIsAuth } from '../../redux/features/auth/authSlice'
+import { useTranslation } from 'react-i18next'
 
 export default function RegisterPage() {
+    const { t, i18n } = useTranslation()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [fullname, setFullname] = useState('')
