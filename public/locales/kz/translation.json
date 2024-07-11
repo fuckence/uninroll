@@ -1,4 +1,12 @@
 {
+    "login": "Кіру",
+    "register": "Тіркелу",
+    "sign_email": "Электрондық пошта",
+    "sign_password": "Құпия сөз",
+    "sign_fullname": "Толык аты-жөні",
+    "redirect_link_login": "Аккаунт жоқ па?",
+    "redirect_link_register": "Аккаунтыңыз бар ма?",
+    
     "nav_home": "Басты бет",
     "nav_universities": "Университеттер",
     "nav_contact": "Байланыс",

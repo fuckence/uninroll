@@ -1,4 +1,12 @@
 {
+    "login": "Войти",
+    "register": "Регистрация",
+    "sign_email": "Электронная почта",
+    "sign_password": "Пароль",
+    "sign_fullname": "Полное имя",
+    "redirect_link_login": "Нет аккаунта?",
+    "redirect_link_register": "Уже есть аккаунт?",
+    
     "nav_home": "Главная",
     "nav_universities": "Университеты",
     "nav_contact": "Контакты",

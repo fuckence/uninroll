@@ -1,4 +1,12 @@
 {
+    "login": "Login",
+    "register": "Register",
+    "sign_email": "Email",
+    "sign_fullname": "Full name",
+    "sign_password": "Password",
+    "redirect_link_login" : "Does not have an account?",
+    "redirect_link_register" : "Already have an account?",
+    
     "nav_home": "Home",
     "nav_universities": "Universities",
     "nav_contact": "Contacts",

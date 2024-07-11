@@ -58,27 +58,27 @@ export default function RegisterPage() {
                     <form 
                       onSubmit={e => e.preventDefault()}
                       className='form-container'>
-                        <h1>Registration</h1>
+                        <h1>{t('register')}</h1>
                         <div className='line'></div>
                         {messages.map((msg, index) => (
                             <div key={index} className={`server-message-block ${msg.type}`}>{msg.text}</div>
                         ))}
-                        <label className='label-form'>Email
-                            <input type="email" placeholder='Email' className='input-form' value={email} onChange={(event) => setEmail(event.target.value)}></input>
+                        <label className='label-form'>{t('sign_email')}
+                            <input type="email" placeholder={t('sign_email')} className='input-form' value={email} onChange={(event) => setEmail(event.target.value)}></input>
                         </label>
-                        <label className='label-form'>Full name
-                            <input type="text" placeholder='Full name' className='input-form' value={fullname} onChange={(event) => setFullname(event.target.value)}></input>
+                        <label className='label-form'>{t('sign_fullname')}
+                            <input type="text" placeholder={t('sign_fullname')} className='input-form' value={fullname} onChange={(event) => setFullname(event.target.value)}></input>
                         </label>
-                        <label className='label-form'>Password
-                            <input type="password" placeholder='Password' className='input-form' value={password} onChange={(event) => setPassword(event.target.value)}></input>
+                        <label className='label-form'>{t('sign_password')}
+                            <input type="password" placeholder={t('sign_password')} className='input-form' value={password} onChange={(event) => setPassword(event.target.value)}></input>
                         </label>
                         <button
                             type='submit'
                             onClick={handleSubmit}
                             className='button-form-submit'>
-                            Register
+                            {t('register')}
                         </button>
-                        <Link to={'/login'} className='link-to-form'>Have an account?</Link>
+                        <Link to={'/login'} className='link-to-form'>{t('redirect_link_register')}</Link>
                     </form>
                 </div>
             </div>
