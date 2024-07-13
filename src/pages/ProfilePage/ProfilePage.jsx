@@ -45,12 +45,12 @@ export default function ProfilePage() {
                                 </a>
                             </li>
                             <li>
-                                <a className={`account-sidebar-link rounded-bottom-corners ${activeTab === 'documents' ? 'active' : ''}`} onClick={() => setActiveTab('documents')}>
+                                <a className={`account-sidebar-link ${activeTab === 'documents' ? 'active' : ''}`} onClick={() => setActiveTab('documents')}>
                                     {t('profile_documents')}
                                 </a>
                             </li>
                             <li>
-                                <a className={`account-sidebar-link rounded-bottom-corners ${activeTab === 'documents' ? 'active' : ''}`} onClick={() => setActiveTab('applications')}>
+                                <a className={`account-sidebar-link rounded-bottom-corners ${activeTab === 'applications' ? 'active' : ''}`} onClick={() => setActiveTab('applications')}>
                                     {t('profile_applications')}
                                 </a>
                             </li>
