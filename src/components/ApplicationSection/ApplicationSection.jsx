@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { getApplications } from '../../redux/features/applications/applicationsSlice';
 import './ApplicationSection.css'
-export const DocumentsSection = () => {
+
+export const ApplicationSection = () => {
     const { t } = useTranslation()
     const dispatch = useDispatch()
     const { applications, status, error } = useSelector(state => state.applications)
