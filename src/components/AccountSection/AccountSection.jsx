@@ -63,7 +63,7 @@ export const AccountSection = ({ userData, onSave, onCancel }) => {
                 <label>{t('account_fullname')}:
                     <input type="text" name="fullname" value={editUser.fullname} onChange={handleGeneralInputChange} />
                 </label>
-                <label>t{'sign_email'}:
+                <label>{t('sign_email')}:
                     <input type="email" name="email" value={editUser.email} onChange={handleGeneralInputChange} />
                 </label>
                 <label>{t('account_phonenumber')}:
