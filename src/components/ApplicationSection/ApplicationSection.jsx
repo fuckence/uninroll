@@ -24,7 +24,7 @@ export const ApplicationSection = () => {
                 <div className='application-container'>
                     {applications && applications.map(application => (
                         <div className='application-item-container' key={application._id}>
-                            <h3>{application.university}</h3>
+                            <h4>{application.university}</h4>
                             <p>{application.major}</p>
                         </div>
                     ))}
