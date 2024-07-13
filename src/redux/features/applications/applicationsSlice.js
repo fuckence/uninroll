@@ -11,7 +11,9 @@ export const getApplications = createAsyncThunk('application/getApplications', a
         if (response.status !== 200) {
             return rejectWithValue(response.data);
         }
+        console.log(response.data.applications)
         return response.data.applications;
+
     } catch (error) {
         return rejectWithValue(error.response?.data || { message: error.message });
     }
