@@ -151,7 +151,7 @@
     "state_failed_files": "Не удалось получить файлы",
     "old_password": "Старый пароль",
     "new_password": "Новый пароль",
-    "confirm_password": "Подтвердите пароль"
-
+    "confirm_password": "Подтвердите пароль",
+    "applications_heading": "Ваши заявки в университет"
     
 }

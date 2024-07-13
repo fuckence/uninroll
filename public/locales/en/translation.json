@@ -150,5 +150,6 @@
     "state_failed_files": "Failed to get files",
     "old_password": "Old password",
     "new_password": "New password",
-    "confirm_password": "Confirm password"
+    "confirm_password": "Confirm password",
+    "applications_heading" : "Your University Applications"
 }

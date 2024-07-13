@@ -145,5 +145,6 @@
     "state_failed_files": "Файлдарды алу сәтсіз аяқталды",
     "old_password": "Ескі құпия сөз",
     "new_password": "Жаңа құпия сөз",
-    "confirm_password": "Құпия сөзді растау"
+    "confirm_password": "Құпия сөзді растау",
+    "applications_heading" : "Сіздің университетке өтініштеріңіз"
 }

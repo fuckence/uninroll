@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateUserDetails, getMe, updatePassword } from '../../redux/features/auth/authSlice';
 import './ProfilePage.css';
 import { AccountSection } from '../../components/AccountSection/AccountSection';
+import { ApplicationSection } from '../../components/ApplicationSection/ApplicationSection'
 import { PasswordSection } from '../../components/PasswordSection/PasswordSection';
 import { DocumentsSection } from '../../components/DocumentsSection/DocumentsSection';
 import { useTranslation } from 'react-i18next';
@@ -20,7 +21,7 @@ export default function ProfilePage() {
         dispatch(getMe());
     };
     const { t, i18n } = useTranslation()
-    const [activeTab, setActiveTab] = useState('documents');
+    const [activeTab, setActiveTab] = useState('account');
 
 
     return (
@@ -54,6 +55,7 @@ export default function ProfilePage() {
                         {activeTab === 'account' && <AccountSection userData={user} onSave={handleUpdateGeneralInformation} onCancel={handleCancelUpdateGeneral} />}
                         {activeTab === 'password' && <PasswordSection />}
                         {activeTab === 'documents' && <DocumentsSection />}
+                        {activeTab === 'applications' && <ApplicationSection />}
                     </div>
                 </div>
             </div>
