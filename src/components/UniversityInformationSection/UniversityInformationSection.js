@@ -28,7 +28,7 @@ export default function UniversityInformationSection({university}) {
 
     const handleSaveFiles = async () => {
         try {
-            await dispatch(sendApplicationEmail({ userId: user._id, fullname: user.fullname, email: university.email, major: major }));
+            await dispatch(sendApplicationEmail({ userId: user._id, fullname: user.fullname, email: university.email, major: major, university: university.name }));
         } catch (error) {
             console.error('Error sending application:', error);
         }
