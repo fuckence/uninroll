@@ -13,6 +13,8 @@ export const ApplicationSection = () => {
         dispatch(getApplications());
     }, [dispatch]);
 
+    console.log(applications)
+
 
     return (
         <div className='applications-container'>
