@@ -1,10 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from '../../../api/axios'
 
-const initialState = [
-
-]
-
 export const getApplications = createAsyncThunk('application/getApplications', async (_, { rejectWithValue })=> {
     try {
         const response = await axios.get('/application/get-applications');
@@ -34,7 +30,7 @@ const applicationSlice = createSlice({
             })
             .addCase(getApplications.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-                state.applications = action.payload.applications;
+                state.applications = action.payload;
                 state.error = null;
             })
             .addCase(getApplications.rejected, (state, action) => {
