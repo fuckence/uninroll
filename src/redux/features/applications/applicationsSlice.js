@@ -5,7 +5,7 @@ const initialState = [
 
 ]
 
-export const getApplications = createAsyncThunk('application/getApplications', async ()=> {
+export const getApplications = createAsyncThunk('application/getApplications', async (_, { rejectWithValue })=> {
     try {
         const response = await axios.get('/application/get-applications');
         if (response.status !== 200) {
