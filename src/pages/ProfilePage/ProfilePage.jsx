@@ -49,6 +49,11 @@ export default function ProfilePage() {
                                     {t('profile_documents')}
                                 </a>
                             </li>
+                            <li>
+                                <a className={`account-sidebar-link rounded-bottom-corners ${activeTab === 'documents' ? 'active' : ''}`} onClick={() => setActiveTab('applications')}>
+                                    {t('profile_applications')}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div className="profile-container-right">

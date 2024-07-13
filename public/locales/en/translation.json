@@ -135,6 +135,7 @@
     "profile_account": "Account",
     "profile_password": "Password",
     "profile_documents": "Documents",
+    "profile_applications": "Applications",
     "account_username": "Username",
     "account_fullname": "Fullname",
     "account_phonenumber": "Phone number",

@@ -136,6 +136,8 @@
     "profile_account": "Аккаунт",
     "profile_password": "Пароль",
     "profile_documents": "Документы",
+    "profile_applications": "Ваши заявки",
+
     "account_username": "Имя пользователя",
     "account_fullname": "Полное имя",
     "account_phonenumber": "Номер телефона",
